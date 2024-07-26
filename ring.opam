@@ -17,6 +17,7 @@ depends: [
   "yocaml_omd"
   "yocaml_eio"
   "yocaml_syndication"
+  "ppx_expect" {with-test}
   "ocamlformat" {with-dev-setup}
   "ocp-indent" {with-dev-setup}
   "merlin" {with-dev-setup}

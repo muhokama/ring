@@ -2,4 +2,5 @@
  (name gem)
  (public_name ring.gem)
  (synopsis "The name [gem] is because it's set with a ring. lol")
+ (modules_without_implementation sigs)
  (libraries yocaml))

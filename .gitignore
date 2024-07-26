@@ -27,3 +27,6 @@ setup.log
 
 # Local OPAM switch
 _opam/
+
+# Generation output
+_www/

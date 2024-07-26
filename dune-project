@@ -14,14 +14,18 @@
   (synopsis "A dead-simple webring")
   (description "A webring for fans of mechanics and functional programming")
   (depends
+
    (ocaml (>= 5.1.1))
    (dune (>= 3.16.0))
+
    yocaml
    yocaml_jingoo
    yocaml_yaml
    yocaml_omd
    yocaml_eio
    yocaml_syndication
+
+   (ppx_expect :with-test)
 
    (ocamlformat :with-dev-setup)
    (ocp-indent :with-dev-setup)
