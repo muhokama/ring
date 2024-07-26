@@ -1,0 +1,5 @@
+(library
+ (name gem)
+ (public_name ring.gem)
+ (synopsis "The name [gem] is because it's set with a ring. lol")
+ (libraries yocaml))

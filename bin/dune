@@ -1,0 +1,3 @@
+(executable
+ (name ring)
+ (public_name ring))
