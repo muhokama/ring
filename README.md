@@ -1,3 +1,10 @@
+> [!WARNING]  
+> This project uses a [developing version of
+> YOCaml](https://gitlab.com/funkywork/yocaml) (to experiment with its
+> expressiveness), so it is naturally also experimental and, above all, **work
+> in progress** (and usable for the moment, but check back regularly to see how
+> things are progressing :D).
+
 # ring.muhokama.fun
 
 > **ring.muhokama.fun** is a [webring](https://en.wikipedia.org/wiki/Webring)
