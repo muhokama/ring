@@ -1,5 +1,6 @@
 open Yocaml
 open Gem.Model
+open Util
 
 let%expect_test "validation - 1" =
   let base = Lang.Eng in
@@ -33,9 +34,8 @@ let%expect_test "validation - 2" =
 
 let%expect_test "validation - 3" =
   let epct = Data.string "Far" |> Lang.validate in
-  let result = match epct with Ok _ -> "should fail" | Error _ -> "correct" in
-  print_endline result;
-  [%expect {| correct |}]
+  print_validated_value Lang.pp epct;
+  [%expect {| <error-with-message: Invalid Lang Value> for far |}]
 
 let%expect_test "normalization - 1" =
   let result = Lang.Eng |> Lang.normalize in
