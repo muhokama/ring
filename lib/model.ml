@@ -1,3 +1,10 @@
+let minimal_length len =
+  let open Yocaml.Data.Validation in
+  where ~pp:Format.pp_print_string
+    ~message:(fun s -> s ^ " should be at least of size " ^ string_of_int len)
+    (fun s -> String.length s >= len)
+
+let has_opt x = Yocaml.Data.bool @@ Option.is_some x
 let trim_lowercase x = x |> String.trim |> String.lowercase_ascii
 
 module Lang = struct
@@ -67,4 +74,60 @@ module Url = struct
         ("scheme", string @@ scheme_to_string scheme);
         ("url_without_scheme", string url);
       ]
+end
+
+module Link = struct
+  type t = string * Lang.t * Url.t
+
+  let validate =
+    let open Yocaml.Data.Validation in
+    record (fun fields ->
+        let+ title = required fields "title" (string & minimal_length 2)
+        and+ lang = optional_or fields "lang" ~default:Lang.Eng Lang.validate
+        and+ url = required fields "url" Url.validate in
+        (title, lang, url))
+
+  let normalize (title, lang, url) =
+    let open Yocaml.Data in
+    record
+      [
+        ("title", string title);
+        ("lang", Lang.normalize lang);
+        ("url", Url.normalize url);
+      ]
+
+  let pp ppf (title, lang, url) =
+    Format.fprintf ppf "%s, %a, %a" title Lang.pp lang Url.pp url
+
+  let to_string = Format.asprintf "%a" pp
+
+  let equal (title_a, lang_a, url_a) (title_b, lang_b, url_b) =
+    String.equal title_a title_b
+    && Lang.equal lang_a lang_b
+    && Url.equal url_a url_b
+end
+
+module Member = struct
+  type t = { id : string; bio : string option; has_avatar : bool }
+
+  let entity_name = "Member"
+  let neutral = Yocaml.Metadata.required entity_name
+  let validate_id = Yocaml.(Data.Validation.(Slug.validate & minimal_length 2))
+
+  let validate =
+    let open Yocaml.Data.Validation in
+    record (fun fields ->
+        let+ id = required fields "id" validate_id
+        and+ bio = optional fields "bio" (string & minimal_length 5)
+        and+ has_avatar = optional_or fields ~default:false "has_avatar" bool in
+        { id; bio; has_avatar })
+
+  let normalize { id; bio; has_avatar } =
+    let open Yocaml.Data in
+    [
+      ("id", string id);
+      ("has_bio", has_opt bio);
+      ("bio", option string bio);
+      ("has_havatar", bool has_avatar);
+    ]
 end
