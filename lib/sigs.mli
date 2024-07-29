@@ -60,5 +60,17 @@ module type RESOLVER = sig
 
     val root : Yocaml.Path.t
     (** [R.Target.root] is [R.target]. *)
+
+    val cache : Yocaml.Path.t
+    (** Resolve the cache location. *)
+
+    val data : Yocaml.Path.t
+    (** Resolve the data location. *)
+
+    val members : Yocaml.Path.t
+    (** Resolve the members location. *)
+
+    val chain : Yocaml.Path.t
+    (** Resolve the chain enumeration location. *)
   end
 end

@@ -14,8 +14,8 @@ let%expect_test "validate a minimal member" =
   print_validated_value Member.pp (Member.validate member);
   [%expect
     {|
-    {"id": "xwv", "has_bio": false, "bio": null, "has_avatar": false,
-    "main_link":
+    {"id": "xwv", "has_display_name": false, "display_name": null, "has_bio":
+     false, "bio": null, "has_avatar": false, "main_link":
      {"title": "xvw.lol", "lang": "eng", "url":
       {"url": "https://xvw.lol", "scheme": "https", "url_without_scheme":
        "xvw.lol"}},
@@ -54,9 +54,9 @@ let%expect_test "validate a full member" =
   print_validated_value Member.pp (Member.validate member);
   [%expect
     {|
-    {"id": "xwv", "has_bio": true, "bio":
-     "I an OCaml programmer from Belgium, living in France", "has_avatar": true,
-    "main_link":
+    {"id": "xwv", "has_display_name": false, "display_name": null, "has_bio":
+     true, "bio": "I an OCaml programmer from Belgium, living in France",
+    "has_avatar": true, "main_link":
      {"title": "xvw.lol", "lang": "eng", "url":
       {"url": "https://xvw.lol", "scheme": "https", "url_without_scheme":
        "xvw.lol"}},

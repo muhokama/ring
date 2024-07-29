@@ -137,4 +137,17 @@ module Member : sig
 
   include Yocaml.Required.DATA_READABLE with type t := t
   include Yocaml.Required.DATA_INJECTABLE with type t := t
+
+  (** {1 Accessors and Mutators} *)
+
+  val id : t -> string
+  (** Returns the id of a member. *)
+end
+
+module Chain : sig
+  (** Describes the chain of members (as a list of identifiers). *)
+
+  type t = string list
+
+  include Yocaml.Required.DATA_READABLE with type t := t
 end

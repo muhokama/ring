@@ -119,6 +119,7 @@ module Link_table = struct end
 module Member = struct
   type t = {
     id : string;
+    display_name : string option;
     bio : string option;
     has_avatar : bool;
     nouns : string list;
@@ -129,6 +130,7 @@ module Member = struct
     location : string option;
   }
 
+  let id { id; _ } = id
   let entity_name = "Member"
   let neutral = Yocaml.Metadata.required entity_name
   let validate_id = Yocaml.(Data.Validation.(Slug.validate & minimal_length 2))
@@ -137,6 +139,8 @@ module Member = struct
     let open Yocaml.Data.Validation in
     record (fun fields ->
         let+ id = required fields "id" validate_id
+        and+ display_name =
+          optional fields "display_name" (string & minimal_length 2)
         and+ bio = optional fields "bio" (string & minimal_length 5)
         and+ has_avatar = optional_or fields ~default:false "has_avatar" bool
         and+ main_link = required fields "main_link" Link.validate
@@ -152,6 +156,7 @@ module Member = struct
         in
         {
           id;
+          display_name;
           bio;
           has_avatar;
           main_link;
@@ -165,6 +170,7 @@ module Member = struct
   let normalize
       {
         id;
+        display_name;
         bio;
         has_avatar;
         main_link;
@@ -177,6 +183,8 @@ module Member = struct
     let open Yocaml.Data in
     [
       ("id", string id);
+      ("has_display_name", has_opt display_name);
+      ("display_name", option string display_name);
       ("has_bio", has_opt bio);
       ("bio", option string bio);
       ("has_avatar", bool has_avatar);
@@ -203,6 +211,7 @@ module Member = struct
       {
         id;
         bio;
+        display_name;
         has_avatar;
         main_link;
         main_feed;
@@ -213,6 +222,7 @@ module Member = struct
       } other =
     String.equal id other.id
     && Option.equal String.equal bio other.bio
+    && Option.equal String.equal display_name other.display_name
     && Bool.equal has_avatar other.has_avatar
     && Link.equal main_link other.main_link
     && Option.equal Link.equal main_feed other.main_feed
@@ -220,4 +230,15 @@ module Member = struct
     && List.equal Link.equal additional_links other.additional_links
     && List.equal Link.equal additional_feeds other.additional_feeds
     && Option.equal String.equal location other.location
+end
+
+module Chain = struct
+  type t = string list
+
+  let entity_name = "Chain"
+  let neutral = Ok []
+
+  let validate =
+    let open Yocaml.Data.Validation in
+    list_of Yocaml.Slug.validate
 end

@@ -13,5 +13,9 @@ module Make (R : Sigs.RESOLVABLE) = struct
 
   module Target = struct
     let root = R.target
+    let cache = Path.(R.target / "cache")
+    let data = Path.(R.target / "data")
+    let members = Path.(data / "members")
+    let chain = Path.(data / "chain.yml")
   end
 end
