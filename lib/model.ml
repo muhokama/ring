@@ -5,14 +5,18 @@ let minimal_length len =
     (fun s -> String.length s >= len)
 
 let has_opt x = Yocaml.Data.bool @@ Option.is_some x
-let trim_lowercase x = x |> String.trim |> String.lowercase_ascii
+let has_list x = Yocaml.Data.bool @@ not (List.is_empty x)
+
+let token =
+  Yocaml.Data.Validation.(
+    string $ fun x -> x |> String.trim |> String.lowercase_ascii)
 
 module Lang = struct
   type t = Eng | Fra
 
   let validate =
     let open Yocaml.Data.Validation in
-    string $ trim_lowercase & function
+    token & function
     | "fra" -> Ok Fra
     | "eng" -> Ok Eng
     | given -> fail_with ~given "Invalid Lang Value"
@@ -82,9 +86,12 @@ module Link = struct
   let validate =
     let open Yocaml.Data.Validation in
     record (fun fields ->
-        let+ title = required fields "title" (string & minimal_length 2)
-        and+ lang = optional_or fields "lang" ~default:Lang.Eng Lang.validate
-        and+ url = required fields "url" Url.validate in
+        let* url = required fields "url" Url.validate in
+        let+ lang = optional_or fields "lang" ~default:Lang.Eng Lang.validate
+        and+ title =
+          optional_or fields ~default:(snd url) "title"
+            (string & minimal_length 2)
+        in
         (title, lang, url))
 
   let normalize (title, lang, url) =
@@ -107,8 +114,20 @@ module Link = struct
     && Url.equal url_a url_b
 end
 
+module Link_table = struct end
+
 module Member = struct
-  type t = { id : string; bio : string option; has_avatar : bool }
+  type t = {
+    id : string;
+    bio : string option;
+    has_avatar : bool;
+    nouns : string list;
+    main_link : Link.t;
+    main_feed : Link.t option;
+    additional_links : Link.t list;
+    additional_feeds : Link.t list;
+    location : string option;
+  }
 
   let entity_name = "Member"
   let neutral = Yocaml.Metadata.required entity_name
@@ -119,15 +138,86 @@ module Member = struct
     record (fun fields ->
         let+ id = required fields "id" validate_id
         and+ bio = optional fields "bio" (string & minimal_length 5)
-        and+ has_avatar = optional_or fields ~default:false "has_avatar" bool in
-        { id; bio; has_avatar })
+        and+ has_avatar = optional_or fields ~default:false "has_avatar" bool
+        and+ main_link = required fields "main_link" Link.validate
+        and+ main_feed = optional fields "main_feed" Link.validate
+        and+ nouns = optional_or fields ~default:[] "nouns" (list_of token)
+        and+ location = optional fields "location" string
+        and+ additional_links =
+          optional_or fields ~default:[] "additional_links"
+            (list_of Link.validate)
+        and+ additional_feeds =
+          optional_or fields ~default:[] "additional_feeds"
+            (list_of Link.validate)
+        in
+        {
+          id;
+          bio;
+          has_avatar;
+          main_link;
+          main_feed;
+          nouns;
+          additional_links;
+          additional_feeds;
+          location;
+        })
 
-  let normalize { id; bio; has_avatar } =
+  let normalize
+      {
+        id;
+        bio;
+        has_avatar;
+        main_link;
+        main_feed;
+        nouns;
+        additional_links;
+        additional_feeds;
+        location;
+      } =
     let open Yocaml.Data in
     [
       ("id", string id);
       ("has_bio", has_opt bio);
       ("bio", option string bio);
-      ("has_havatar", bool has_avatar);
+      ("has_avatar", bool has_avatar);
+      ("main_link", Link.normalize main_link);
+      ("has_main_feed", has_opt main_feed);
+      ("main_feed", option Link.normalize main_feed);
+      ("has_nouns", has_list nouns);
+      ("nouns", list_of string nouns);
+      ("has_additional_links", has_list additional_links);
+      ("additional_links", list_of Link.normalize additional_links);
+      ("has_additional_feeds", has_list additional_feeds);
+      ("additional_feeds", list_of Link.normalize additional_feeds);
+      ("has_location", has_opt location);
+      ("location", option string location);
     ]
+
+  let pp ppf member =
+    Format.fprintf ppf "%a" Yocaml.Data.pp
+      (member |> normalize |> Yocaml.Data.record)
+
+  let to_string = Format.asprintf "%a" pp
+
+  let equal
+      {
+        id;
+        bio;
+        has_avatar;
+        main_link;
+        main_feed;
+        nouns;
+        additional_links;
+        additional_feeds;
+        location;
+      } other =
+    String.equal id other.id
+    && Option.equal String.equal bio other.bio
+    && Bool.equal has_avatar other.has_avatar
+    && Link.equal main_link other.main_link
+    && Option.equal Link.equal main_feed other.main_feed
+    && List.equal String.equal nouns other.nouns
+    && List.equal Link.equal additional_links other.additional_links
+    && List.equal Link.equal additional_feeds other.additional_feeds
+    && Option.equal String.equal location other.location
 end

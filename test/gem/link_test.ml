@@ -32,11 +32,15 @@ let%expect_test "validation - 4" =
   let open Data in
   let link = record [] in
   print_validated_value Link.pp @@ Link.validate link;
-  [%expect
-    {|
-    <error-invalid-record missing field: title
-    missing field: url> for {}
-    |}]
+  [%expect {| <error-invalid-record missing field: url> for {} |}]
+
+let%expect_test "validation - relaying on default title " =
+  let link =
+    let open Data in
+    record [ ("url", string "https://xvw.lol") ]
+  in
+  print_validated_value Link.pp @@ Link.validate link;
+  [%expect {| xvw.lol, eng, https://xvw.lol |}]
 
 let%expect_test "normalize - 1" =
   let link = mk "Capsule" ~lang:"fra" "https://xvw.lol" in
