@@ -3,4 +3,4 @@
  (public_name ring.gem)
  (synopsis "The name [gem] is because it's set with a ring. lol")
  (modules_without_implementation sigs)
- (libraries yocaml yocaml_yaml yocaml_syndication yocaml_jingoo))
+ (libraries yocaml yocaml_yaml yocaml_syndication yocaml_jingoo yocaml_omd))

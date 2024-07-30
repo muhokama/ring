@@ -34,3 +34,6 @@ val to_list : t -> (Model.Member.t * (Model.Member.t * Model.Member.t)) list
 
 val to_opml : (t, string) Yocaml.Task.t
 (** [to_opml] An arrow that lift a chain into an OPML file. *)
+
+val empty : t
+(** [empty] returns an empty chain. *)

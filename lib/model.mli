@@ -83,6 +83,8 @@ module Link : sig
   type t
   (** The type describing a member. *)
 
+  val normalize_underlying_link : t -> (string * Yocaml.Data.t) list
+
   val validate : Yocaml.Data.t -> t Yocaml.Data.Validation.validated_value
   (** [validate data] validate a link from a {!type:Yocaml.Data.t} value. *)
 
@@ -155,4 +157,21 @@ module Chain : sig
   type t = string list
 
   include Yocaml.Required.DATA_READABLE with type t := t
+end
+
+module Page : sig
+  (** Describes a generic page, mostly used on top of another model. *)
+
+  type t
+  (** The type describing a page. *)
+
+  val empty : t
+
+  val validate_underlying_page :
+    (string * Yocaml.Data.t) list -> t Yocaml.Data.Validation.validated_record
+
+  (** {1 Dealing as metadata} *)
+
+  include Yocaml.Required.DATA_READABLE with type t := t
+  include Yocaml.Required.DATA_INJECTABLE with type t := t
 end

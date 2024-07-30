@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    {%- if has_description -%}
+    <meta name="description" content="{{ description }}" />
+    {%- endif -%}
+    <title>
+      ring.muhokama.fun{%- if has_page_title %} - {{ page_title }}{%- endif -%}
+    </title>
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container"><h1>ring.muhokama.fun</h1></div>
+    </header>
+    <main>
+      <div class="container">
+        {%- autoescape false -%} {{ yocaml_body }} {%- endautoescape -%}
+      </div>
+    </main>
+    <footer><div class="container">footer</div></footer>
+  </body>
+</html>

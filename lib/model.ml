@@ -94,14 +94,15 @@ module Link = struct
         in
         (title, lang, url))
 
-  let normalize (title, lang, url) =
+  let normalize_underlying_link (title, lang, url) =
     let open Yocaml.Data in
-    record
-      [
-        ("title", string title);
-        ("lang", Lang.normalize lang);
-        ("url", Url.normalize url);
-      ]
+    [
+      ("title", string title);
+      ("lang", Lang.normalize lang);
+      ("url", Url.normalize url);
+    ]
+
+  let normalize link = Yocaml.Data.record (normalize_underlying_link link)
 
   let pp ppf (title, lang, url) =
     Format.fprintf ppf "%s, %a, %a" title Lang.pp lang Url.pp url
@@ -268,6 +269,31 @@ module Member = struct
              feed_to_outline title description feed)
     in
     main_feed @ additional_feeds
+end
+
+module Page = struct
+  type t = { page_title : string option; description : string option }
+
+  let entity_name = "Page"
+  let empty = { page_title = None; description = None }
+  let neutral = Ok { page_title = None; description = None }
+
+  let validate_underlying_page fields =
+    let open Yocaml.Data.Validation in
+    let+ page_title = optional fields "page_title" string
+    and+ description = optional fields "description" string in
+    { page_title; description }
+
+  let validate = Yocaml.Data.Validation.record validate_underlying_page
+
+  let normalize { page_title; description } =
+    let open Yocaml.Data in
+    [
+      ("has_page_title", has_opt page_title);
+      ("page_title", option string page_title);
+      ("has_description", has_opt description);
+      ("description", option string description);
+    ]
 end
 
 module Chain = struct

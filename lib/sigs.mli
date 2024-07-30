@@ -21,6 +21,9 @@ module type RESOLVER = sig
   include RESOLVABLE
   (** @inline *)
 
+  val track_common_dependencies : (unit, unit) Yocaml.Task.t
+  (** An arrow that track common dependencies*)
+
   (** {1 Source}
 
       Provides utilities for building paths relative to the project source. *)
@@ -29,28 +32,17 @@ module type RESOLVER = sig
     (** Describes the source resolvers. *)
 
     val root : Yocaml.Path.t
-    (** [R.Source.root] is [R.source]. *)
-
     val binary : Yocaml.Path.t
-    (** Resolve the binary. *)
-
     val cname : Yocaml.Path.t
-    (** Resolve the CNAME file. *)
-
     val common_deps : Yocaml.Path.t list
-    (** A list of default dependencies. *)
-
     val data : Yocaml.Path.t
-    (** Resolve the [data-path] ([source / data]). *)
-
     val static : Yocaml.Path.t
-    (** Resolve the [static-path] ([source / static]). *)
-
     val css : Yocaml.Path.t
-    (** Resolve the [css-path] ([source / static / css]). *)
-
+    val fonts : Yocaml.Path.t
     val templates : Yocaml.Path.t
-    (** Resolve the [templates-path] ([source / static / templates]). *)
+    val members : Yocaml.Path.t
+    val chain : Yocaml.Path.t
+    val index : Yocaml.Path.t
 
     val template : Yocaml.Path.fragment -> Yocaml.Path.t
     (** [template ?ext file] resolve a template file located into [templates]
@@ -59,11 +51,7 @@ module type RESOLVER = sig
         {b Warning} The function simply produces a path, there is no guarantee
         that the template exists. *)
 
-    val members : Yocaml.Path.t
-    (** Resolve the members location. *)
-
-    val chain : Yocaml.Path.t
-    (** Resolve the chain enumeration location. *)
+    val static_images : Yocaml.Path.t
   end
 
   (** {1 Target}
@@ -74,21 +62,14 @@ module type RESOLVER = sig
     (** Describes the target resolvers. *)
 
     val root : Yocaml.Path.t
-    (** [R.Target.root] is [R.target]. *)
-
     val cache : Yocaml.Path.t
-    (** Resolve the cache location. *)
-
+    val css : Yocaml.Path.t
+    val fonts : Yocaml.Path.t
     val opml : Yocaml.Path.t
-    (** Resolve the OPML folder location. *)
-
     val ring_opml : Yocaml.Path.t
-    (** Resolve the OPML file for member's feed. *)
-
+    val index : Yocaml.Path.t
+    val images : Yocaml.Path.t
     val members : Yocaml.Path.t
-    (** Resolve the members directory. *)
-
     val member_redirection : id:string -> [ `Pred | `Succ ] -> Yocaml.Path.t
-    (** Resolve the link for an user redirection. *)
   end
 end

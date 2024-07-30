@@ -8,6 +8,8 @@ type elt = {
 
 type t = elt list
 
+let empty = []
+
 let from_member_list = function
   | [] -> []
   | x :: xs ->
