@@ -13,6 +13,7 @@ module Make (R : Sigs.RESOLVABLE) = struct
     let members = Path.(data / "members")
     let chain = Path.(data / "chain.yml")
     let common_deps = [ binary; chain ]
+    let cname = Path.(static / "CNAME")
   end
 
   module Target = struct

@@ -34,6 +34,9 @@ module type RESOLVER = sig
     val binary : Yocaml.Path.t
     (** Resolve the binary. *)
 
+    val cname : Yocaml.Path.t
+    (** Resolve the CNAME file. *)
+
     val common_deps : Yocaml.Path.t list
     (** A list of default dependencies. *)
 

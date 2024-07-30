@@ -65,6 +65,7 @@ let process_all (module R : Sigs.RESOLVER) () =
   let* () = init_message (module R) in
   let* cache, chain = init_chain (module R) in
   return cache
+  >>= Yocaml.Action.copy_file ~into:R.Target.root R.Source.cname
   >>= generate_opml (module R) chain
   >>= process_chain (module R) chain
   >>= Yocaml.Action.store_cache R.Target.cache
