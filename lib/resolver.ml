@@ -20,5 +20,12 @@ module Make (R : Sigs.RESOLVABLE) = struct
     let cache = Path.(R.target / "cache")
     let opml = Path.(R.target / "opml")
     let ring_opml = Path.(opml / "ring.opml")
+    let members = Path.(R.target / "u")
+
+    let member_redirection ~id pred_or_succ =
+      let target = Path.(members / id) in
+      match pred_or_succ with
+      | `Pred -> Path.(target / "pred" / "index.html")
+      | `Succ -> Path.(target / "succ" / "index.html")
   end
 end

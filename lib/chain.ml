@@ -47,6 +47,11 @@ let fold f start chain =
     (fun acc { pred; curr; succ } -> f acc ~pred ~curr ~succ)
     start chain
 
+let to_list chain =
+  chain
+  |> fold (fun acc ~pred ~curr ~succ -> (curr, (pred, succ)) :: acc) []
+  |> List.rev
+
 let to_opml =
   let open Yocaml.Task in
   List.concat_map (fun { curr; _ } -> Model.Member.to_outline curr)

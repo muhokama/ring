@@ -81,5 +81,11 @@ module type RESOLVER = sig
 
     val ring_opml : Yocaml.Path.t
     (** Resolve the OPML file for member's feed. *)
+
+    val members : Yocaml.Path.t
+    (** Resolve the members directory. *)
+
+    val member_redirection : id:string -> [ `Pred | `Succ ] -> Yocaml.Path.t
+    (** Resolve the link for an user redirection. *)
   end
 end

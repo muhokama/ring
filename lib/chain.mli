@@ -29,5 +29,8 @@ val fold :
     function that takes the predecessor, the current member, the successor and
     the current state. *)
 
+val to_list : t -> (Model.Member.t * (Model.Member.t * Model.Member.t)) list
+(** [to_list chain] returns a chain into a list of [curr, (pred, succ)]. *)
+
 val to_opml : (t, string) Yocaml.Task.t
 (** [to_opml] An arrow that lift a chain into an OPML file. *)
