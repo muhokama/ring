@@ -1,0 +1,28 @@
+:root {
+    --main-light-color: #f9f9f9;
+    --main-dark-color: #111111;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--main-light-color);
+    color: var(--main-dark-color);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: var(--main-dark-color);
+    color: var(--main-light-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 32px 0;
+}
