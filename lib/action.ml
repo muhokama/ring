@@ -20,3 +20,20 @@ let init_chain (module R : Sigs.RESOLVER) =
       cache
   in
   (cache, Chain.init ~chain ~members)
+
+let final_message _cache = Yocaml.Eff.log ~level:`Debug "ring.muhokama done"
+
+let generate_opml (module R : Sigs.RESOLVER) chain =
+  Yocaml.Action.write_static_file R.Target.ring_opml
+    (let open Yocaml.Task in
+     Yocaml.Pipeline.track_files (R.Source.members :: R.Source.common_deps)
+     >>> const chain
+     >>> Chain.to_opml)
+
+let process_all (module R : Sigs.RESOLVER) () =
+  let open Yocaml.Eff in
+  let* cache, chain = init_chain (module R) in
+  return cache
+  >>= generate_opml (module R) chain
+  >>= Yocaml.Action.store_cache R.Target.cache
+  >>= final_message
