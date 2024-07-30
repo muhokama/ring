@@ -28,3 +28,6 @@ val fold :
 (** [fold f default chain] Traverses all the elements in the chain by applying a
     function that takes the predecessor, the current member, the successor and
     the current state. *)
+
+val to_opml : (t, string) Yocaml.Task.t
+(** [to_opml] An arrow that lift a chain into an OPML file. *)

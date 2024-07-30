@@ -46,3 +46,8 @@ let fold f start chain =
   List.fold_left
     (fun acc { pred; curr; succ } -> f acc ~pred ~curr ~succ)
     start chain
+
+let to_opml =
+  let open Yocaml.Task in
+  List.concat_map (fun { curr; _ } -> Model.Member.to_outline curr)
+  |>> Yocaml_syndication.Opml.opml2_from ~title:"ring.muhokama.fun" ()

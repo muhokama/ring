@@ -1,0 +1,11 @@
+id: xvw
+display_name: Xavier Van de Woestyne
+bio: I'm a Belgian developer living in France (Nantes), very interested
+  in statically typed functional programming.
+location: France, Nantes
+main_link:
+  url: https://xvw.lol
+  lang: fra
+main_feed:
+  url: https://xvw.lol/atom.xml
+  lang: fra

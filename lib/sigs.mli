@@ -31,6 +31,12 @@ module type RESOLVER = sig
     val root : Yocaml.Path.t
     (** [R.Source.root] is [R.source]. *)
 
+    val binary : Yocaml.Path.t
+    (** Resolve the binary. *)
+
+    val common_deps : Yocaml.Path.t list
+    (** A list of default dependencies. *)
+
     val data : Yocaml.Path.t
     (** Resolve the [data-path] ([source / data]). *)
 
@@ -49,6 +55,12 @@ module type RESOLVER = sig
 
         {b Warning} The function simply produces a path, there is no guarantee
         that the template exists. *)
+
+    val members : Yocaml.Path.t
+    (** Resolve the members location. *)
+
+    val chain : Yocaml.Path.t
+    (** Resolve the chain enumeration location. *)
   end
 
   (** {1 Target}
@@ -64,13 +76,10 @@ module type RESOLVER = sig
     val cache : Yocaml.Path.t
     (** Resolve the cache location. *)
 
-    val data : Yocaml.Path.t
-    (** Resolve the data location. *)
+    val opml : Yocaml.Path.t
+    (** Resolve the OPML folder location. *)
 
-    val members : Yocaml.Path.t
-    (** Resolve the members location. *)
-
-    val chain : Yocaml.Path.t
-    (** Resolve the chain enumeration location. *)
+    val ring_opml : Yocaml.Path.t
+    (** Resolve the OPML file for member's feed. *)
   end
 end

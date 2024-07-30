@@ -142,6 +142,11 @@ module Member : sig
 
   val id : t -> string
   (** Returns the id of a member. *)
+
+  (** {1 OPML generation} *)
+
+  val to_outline : t -> Yocaml_syndication.Opml.outline list
+  (** [to_outline m] transform a member to a list of OPML outlines. *)
 end
 
 module Chain : sig

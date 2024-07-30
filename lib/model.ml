@@ -112,6 +112,10 @@ module Link = struct
     String.equal title_a title_b
     && Lang.equal lang_a lang_b
     && Url.equal url_a url_b
+
+  let title (title, _, _) = title
+  let lang (_, lang, _) = lang
+  let url (_, _, url) = url
 end
 
 module Link_table = struct end
@@ -131,6 +135,10 @@ module Member = struct
   }
 
   let id { id; _ } = id
+
+  let display_name { id; display_name; _ } =
+    Option.value ~default:id display_name
+
   let entity_name = "Member"
   let neutral = Yocaml.Metadata.required entity_name
   let validate_id = Yocaml.(Data.Validation.(Slug.validate & minimal_length 2))
@@ -230,6 +238,36 @@ module Member = struct
     && List.equal Link.equal additional_links other.additional_links
     && List.equal Link.equal additional_feeds other.additional_feeds
     && Option.equal String.equal location other.location
+
+  let feed_to_outline ?main_link title description feed_url =
+    Yocaml_syndication.Opml.subscription
+      ~language:(feed_url |> Link.lang |> Lang.to_string)
+      ~title ~description
+      ?html_url:
+        (main_link |> Option.map (fun x -> x |> Link.url |> Url.to_string))
+      ~feed_url:(feed_url |> Link.url |> Url.to_string)
+      ()
+
+  let to_outline member =
+    let display_name = display_name member in
+    let main_feed =
+      let description = "Main feed of " ^ display_name in
+      let title = member.main_link |> Link.title in
+      member.main_feed
+      |> Option.map
+           (feed_to_outline ~main_link:member.main_link title description)
+      |> Option.to_list
+    in
+    let additional_feeds =
+      member.additional_feeds
+      |> List.mapi (fun index feed ->
+             let title = feed |> Link.title in
+             let description =
+               "Additional feed " ^ string_of_int index ^ "of " ^ display_name
+             in
+             feed_to_outline title description feed)
+    in
+    main_feed @ additional_feeds
 end
 
 module Chain = struct
