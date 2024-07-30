@@ -5,15 +5,7 @@ on:
 
 jobs:
   build-and-test:
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - ubuntu-latest
-        ocaml-compiler:
-          - "5.1"
-          - "5.2"
-    runs-on: ${{matrix.os}}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout tree
         uses: actions/checkout@v4
@@ -21,7 +13,7 @@ jobs:
       - name: Set-up OCaml
         uses: ocaml/setup-ocaml@v3
         with:
-          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+          ocaml-compiler: "5.1.1"
       - run: opam install . --deps-only --with-test
       - run: opam exec -- dune build
       - run: opam exec -- dune runtest
@@ -29,7 +21,7 @@ jobs:
       - name: Upload the build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.os }}-${{ matrix.ocaml-compiler }}-ring.exe
+          name: ring.exe
           path: _build/default/bin/ring.exe
 
   lint-doc:
@@ -41,7 +33,7 @@ jobs:
       - name: Set-up OCaml
         uses: ocaml/setup-ocaml@v3
         with:
-          ocaml-compiler: "5.1"
+          ocaml-compiler: "5.1.1"
 
       - uses: ocaml/setup-ocaml/lint-doc@v3
 
@@ -54,6 +46,6 @@ jobs:
       - name: Set-up OCaml
         uses: ocaml/setup-ocaml@v3
         with:
-          ocaml-compiler: "5.1"
+          ocaml-compiler: "5.1.1"
 
       - uses: ocaml/setup-ocaml/lint-fmt@v3
