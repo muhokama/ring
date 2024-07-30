@@ -70,11 +70,28 @@ being development dependencies of the project).
 
 ## Run the binary `ring.exe`
 
-Just run the `ring.exe` binary compiled from `bin/ring.ml` like this:
+Just run the `ring.exe` binary compiled from `bin/ring.ml`, which should display
+the `manpage`, giving information on how to interact with the binary, like this:
 
 ```shell
 dune exec bin/ring.exe
 ```
+
+Broadly speaking, here are the two main actions proposed by the `ring.exe`
+binary:
+
+- `dune exec bin/ring.exe` display the manpage of the binary
+- `dune exec bin/ring.exe -- build [COMMON_OPTIONS]` builds the ring in `_www`
+  using the current directory as source
+- `dune exec bin/ring.exe -- build [COMMON_OPTIONS] [--port PORT]` launches a
+  development server that rebuilds the ring each time a page is refreshed
+
+The common options are:
+
+- `--target PATH` describes the compilation target (the directory where the ring
+  is to be built)
+- `--source PATH` describes the compilation source (the directory where the data of the ring are located)
+- `--log-level (info | app | debug | error | warning)` describes the log-level
 
 ## Launching tests
 

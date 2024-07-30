@@ -21,6 +21,10 @@ let init_chain (module R : Sigs.RESOLVER) =
   in
   (cache, Chain.init ~chain ~members)
 
+let init_message (module R : Sigs.RESOLVER) =
+  Yocaml.Eff.logf ~level:`Debug "ring.muhokama [source: `%a`, target: `%a`]"
+    Yocaml.Path.pp R.source Yocaml.Path.pp R.target
+
 let final_message _cache = Yocaml.Eff.log ~level:`Debug "ring.muhokama done"
 
 let generate_opml (module R : Sigs.RESOLVER) chain =
@@ -32,6 +36,7 @@ let generate_opml (module R : Sigs.RESOLVER) chain =
 
 let process_all (module R : Sigs.RESOLVER) () =
   let open Yocaml.Eff in
+  let* () = init_message (module R) in
   let* cache, chain = init_chain (module R) in
   return cache
   >>= generate_opml (module R) chain

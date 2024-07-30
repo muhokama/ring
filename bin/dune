@@ -1,4 +1,4 @@
 (executable
  (name ring)
  (public_name ring)
- (libraries yocaml yocaml_eio gem))
+ (libraries cmdliner yocaml yocaml_eio gem))
