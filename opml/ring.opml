@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opml version="2.0">
+  <head>
+    <title>ring.muhokama.fun</title>
+    <docs>http://opml.org/spec2.opml</docs>
+  </head>
+  <body>
+    <outline description="Main feed of Xavier Van de Woestyne" htmlUrl="https://xvw.lol" language="fra" text="xvw.lol" title="xvw.lol" type="rss" xmlUrl="https://xvw.lol/atom.xml"/>
+    <outline description="Main feed of The XHTMLBoy" htmlUrl="https://xhtmlboi.github.io" language="eng" text="xhtmlboi.github.io" title="xhtmlboi.github.io" type="rss" xmlUrl="https://xhtmlboi.github.io/feed.xml"/>
+  </body>
+</opml>
