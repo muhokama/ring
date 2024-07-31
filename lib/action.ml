@@ -18,7 +18,7 @@ let init_chain (module R : Sigs.RESOLVER) =
   let* cache = Yocaml.Action.restore_cache ~on:`Target R.Target.cache in
   let* chain =
     Yocaml_yaml.Eff.read_file_as_metadata
-      (module Model.Chain)
+      (module Model.Chain.Metadata)
       ~on:`Source R.Source.chain
   in
   let+ cache, members =
@@ -34,7 +34,7 @@ let init_chain (module R : Sigs.RESOLVER) =
         (cache, member :: state))
       cache
   in
-  (cache, Chain.init ~chain ~members)
+  (cache, Model.Chain.init ~chain ~members)
 
 let init_message (module R : Sigs.RESOLVER) =
   Yocaml.Eff.logf ~level:`Debug "ring.muhokama [source: `%a`, target: `%a`]"
@@ -48,7 +48,7 @@ let generate_opml (module R : Sigs.RESOLVER) chain =
      R.track_common_dependencies
      >>> Yocaml.Pipeline.track_file R.Source.members
      >>> const chain
-     >>> Chain.to_opml)
+     >>> Model.Chain.to_opml)
 
 let process_chain_member (module R : Sigs.RESOLVER) pred_or_succ current_member
     target_member =
@@ -69,7 +69,7 @@ let process_chain_member (module R : Sigs.RESOLVER) pred_or_succ current_member
 
 let process_chain (module R : Sigs.RESOLVER) chain =
   let process_chain_member = process_chain_member (module R) in
-  Yocaml.Action.batch_list (Chain.to_list chain)
+  Yocaml.Action.batch_list (Model.Chain.to_list chain)
     (fun (curr, (pred, succ)) cache ->
       let open Yocaml.Eff in
       cache

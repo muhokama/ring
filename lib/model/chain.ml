@@ -1,14 +1,18 @@
+module Metadata = struct
+  type t = string list
+
+  let entity_name = "Chain"
+  let neutral = Ok []
+
+  let validate =
+    let open Yocaml.Data.Validation in
+    list_of Yocaml.Slug.validate
+end
+
 module SMap = Map.Make (String)
 
-type elt = {
-  pred : Model.Member.t;
-  curr : Model.Member.t;
-  succ : Model.Member.t;
-}
-
+type elt = { pred : Member.t; curr : Member.t; succ : Member.t }
 type t = elt list
-
-let empty = []
 
 let from_member_list = function
   | [] -> []
@@ -37,7 +41,7 @@ let init ~chain ~members =
   let members =
     List.fold_left
       (fun acc member ->
-        let key = Model.Member.id member in
+        let key = Member.id member in
         SMap.add key member acc)
       SMap.empty members
   in
@@ -56,5 +60,5 @@ let to_list chain =
 
 let to_opml =
   let open Yocaml.Task in
-  List.concat_map (fun { curr; _ } -> Model.Member.to_outline curr)
+  List.concat_map (fun { curr; _ } -> Member.to_outline curr)
   |>> Yocaml_syndication.Opml.opml2_from ~title:"ring.muhokama.fun" ()
