@@ -3,7 +3,7 @@ let run_build target source log_level =
     let source = source
     let target = target
   end) in
-  Yocaml_eio.run ~level:log_level (Gem.Action.process_all (module Resolver))
+  Yocaml_eio.run ~level:log_level (Gem.Action.All.run (module Resolver))
 
 let run_watch target source log_level port =
   let module Resolver = Gem.Resolver.Make (struct
@@ -11,7 +11,7 @@ let run_watch target source log_level port =
     let target = target
   end) in
   Yocaml_eio.serve ~target:Resolver.target ~level:log_level ~port
-    (Gem.Action.process_all (module Resolver))
+    (Gem.Action.All.run (module Resolver))
 
 open Cmdliner
 
