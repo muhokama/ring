@@ -52,23 +52,22 @@ let validate =
       })
 
 let normalize
-    {
-      id;
-      display_name;
-      bio;
-      has_avatar;
-      main_link;
-      main_feed;
-      nouns;
-      additional_links;
-      additional_feeds;
-      location;
-    } =
+    ({
+       id;
+       bio;
+       has_avatar;
+       main_link;
+       main_feed;
+       nouns;
+       additional_links;
+       additional_feeds;
+       location;
+       _;
+     } as m) =
   let open Yocaml.Data in
   [
     ("id", string id);
-    ("has_display_name", has_opt display_name);
-    ("display_name", option string display_name);
+    ("display_name", string @@ display_name m);
     ("has_bio", has_opt bio);
     ("bio", option string bio);
     ("has_avatar", bool has_avatar);

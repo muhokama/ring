@@ -1,1 +1,21 @@
-{%- autoescape false -%} {{ yocaml_body }} {%- endautoescape -%}
+{%- autoescape false -%} {{ yocaml_body }} {%- endautoescape -%} {%- if
+has_interests -%}
+<p class="interests">
+  We're interested in a range of subjects, for example {%- for it in interests
+  %}
+  <a href="{{it.url.url}}">{{ it.title }}</a>{{ it.sep }}{%- endfor -%}. If you
+  are interested in the different topics proposed or if you find yourself close
+  to the ideas presented by the different members of the ring, don't hesitate to
+  <a href="https://github.com/muhokama/ring">add your own digital space</a>!
+</p>
+{%- endif -%} {%- if has_members -%}
+<section class="members">
+  {%- for m in chain -%}
+  <a id="member-{{ m.id }}" href="{{ m.main_link.url.url }}"
+    >{{ m.display_name }}</a
+  >
+  {%- endfor -%}
+</section>
+{%- else -%}
+<section class="no-members">The ring is empty</section>
+{%- endif -%}

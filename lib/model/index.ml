@@ -24,7 +24,7 @@ let normalize { page; chain; interests } =
   Page.normalize page
   @ [
       ("has_interests", has_list interests);
-      ("interests", list_of Link.normalize interests);
-      ("has_members", bool (Chain.is_empty chain));
+      ("interests", Link.normalize_to_semantic_list interests);
+      ("has_members", bool (not (Chain.is_empty chain)));
       ("chain", Chain.normalize chain);
     ]

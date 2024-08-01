@@ -6,7 +6,7 @@ module Metadata = struct
 
   let validate =
     let open Yocaml.Data.Validation in
-    list_of Yocaml.Slug.validate
+    (null & const []) / list_of Yocaml.Slug.validate
 end
 
 module SMap = Map.Make (String)
