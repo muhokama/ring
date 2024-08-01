@@ -17,6 +17,9 @@ val validate : Yocaml.Data.t -> t Yocaml.Data.Validation.validated_value
 val normalize : t -> Yocaml.Data.t
 (** [normalize url] serialize an link into a {!type:Yocaml.Data.t}. *)
 
+val normalize_to_semantic_list : t list -> Yocaml.Data.t
+(** Add a separator in each elements. *)
+
 val pp : Format.formatter -> t -> unit
 (** Pretty-printer for url. *)
 

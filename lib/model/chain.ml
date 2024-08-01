@@ -14,6 +14,8 @@ module SMap = Map.Make (String)
 type elt = { pred : Member.t; curr : Member.t; succ : Member.t }
 type t = elt list
 
+let empty = []
+
 let from_member_list = function
   | [] -> []
   | x :: xs ->
@@ -53,12 +55,19 @@ let fold f start chain =
     (fun acc { pred; curr; succ } -> f acc ~pred ~curr ~succ)
     start chain
 
-let to_list chain =
-  chain
-  |> fold (fun acc ~pred ~curr ~succ -> (curr, (pred, succ)) :: acc) []
-  |> List.rev
+let to_list = List.map (fun { pred; curr; succ } -> (curr, (pred, succ)))
 
 let to_opml =
   let open Yocaml.Task in
   List.concat_map (fun { curr; _ } -> Member.to_outline curr)
   |>> Yocaml_syndication.Opml.opml2_from ~title:"ring.muhokama.fun" ()
+
+let normalize_elt { pred; curr; succ } =
+  let open Yocaml.Data in
+  record
+    (Member.normalize curr
+    @ [ ("pred", string @@ Member.id pred); ("succ", string @@ Member.id succ) ]
+    )
+
+let normalize = Yocaml.Data.list_of normalize_elt
+let is_empty = List.is_empty

@@ -23,6 +23,17 @@ let normalize_underlying_link (title, lang, url) =
 
 let normalize link = Yocaml.Data.record (normalize_underlying_link link)
 
+let normalize_to_semantic_list links =
+  let open Yocaml.Data in
+  let len = List.length links in
+  links
+  |> List.mapi (fun i link ->
+         let sep =
+           if i >= len - 1 then "" else if i >= len - 2 then " and " else ", "
+         in
+         record (normalize_underlying_link link @ [ ("sep", string sep) ]))
+  |> list
+
 let pp ppf (title, lang, url) =
   Format.fprintf ppf "%s, %a, %a" title Lang.pp lang Url.pp url
 

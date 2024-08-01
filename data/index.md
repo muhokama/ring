@@ -1,6 +1,9 @@
 ---
 page_title: Index
-description: Test de description
+description: The index of ring.muhokama.fun
+interests:
+  - title: OCaml
+    url: https://ocaml.org
 ---
 
 Index

@@ -7,6 +7,9 @@
 
 type t
 
+val empty : t
+(** Returns an empty chain. *)
+
 (** {1 Interaction with the chain} *)
 
 val init : chain:string list -> members:Member.t list -> t
@@ -27,6 +30,9 @@ val to_list : t -> (Member.t * (Member.t * Member.t)) list
 
 val to_opml : (t, string) Yocaml.Task.t
 (** [to_opml] An arrow that lift a chain into an OPML file. *)
+
+val is_empty : t -> bool
+val normalize : t -> Yocaml.Data.t
 
 (** {1 Reading chain from a file} *)
 
