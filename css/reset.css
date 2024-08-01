@@ -9,7 +9,7 @@
 }
 
 body {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     line-height: calc(1em + 0.5rem);
     -webkit-font-smoothing: antialiased;
@@ -42,6 +42,15 @@ h4,
 h5,
 h6 {
     overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Inter";
 }
 
 #root,

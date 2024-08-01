@@ -1,28 +1,77 @@
 :root {
-    --main-light-color: #f9f9f9;
+    --main-light-color: #f0f0f0;
     --main-dark-color: #111111;
+    --main-contrast-dark-color: #052520;
+    --main-contrast-light-color: #3aac97;
 }
 
 body {
     min-height: 100vh;
     background-color: var(--main-light-color);
-    color: var(--main-dark-color);
+    color: var(--main-light-color);
     display: flex;
     flex-direction: column;
+    background-color: var(--main-dark-color);
+}
+
+a {
+    color: var(--main-contrast-light-color);
+}
+
+p {
+    margin: 12px 0;
+}
+
+header {
+    margin-top: 32px;
+}
+
+header h1 {
+    font-size: 280%;
+}
+
+header h1 span {
+    color: var(--main-contrast-light-color);
 }
 
 main {
-    flex: 1;
+    flex: 2;
 }
 
 footer {
-    background-color: var(--main-dark-color);
     color: var(--main-light-color);
+    flex: 1;
 }
 
 .container {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    padding: 32px 0;
+    padding: 32px 12px;
+}
+
+.members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin: 68px 0;
+}
+
+.members > a {
+    border-left: 8px solid var(--main-contrast-light-color);
+    background-color: var(--main-contrast-dark-color);
+    padding: 8px;
+    font-family: "Inter";
+    font-size: 80%;
+    text-decoration: none;
+    color: var(--main-contrast-light-color);
+}
+
+.no-members {
+    color: var(--main-contrast-light-color);
+    border-left: 8px solid var(--main-contrast-dark-color);
+    padding: 32px;
+    margin: 64px 0;
+    font-family: "Inria Serif";
+    font-size: 180%;
 }
