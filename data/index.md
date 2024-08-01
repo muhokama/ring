@@ -15,5 +15,6 @@ interests:
 ---
 
 Welcome to the [Muhokama](https://github.com/muhokama/) webring. A collection of
-personal spaces maintained by people who share certain ideas or approaches to
-the Internet.
+**personal spaces** maintained by people _who share certain ideas or approaches
+to the Internet_. You can also retrieve **the list of RSS/Atom feeds** associated
+with the webring using the [following OPML file](/opml/ring.opml).
