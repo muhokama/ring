@@ -10,8 +10,8 @@
 
 body {
     font-size: 1.2rem;
-    line-height: 1.8;
-    line-height: calc(1em + 0.8rem);
+    line-height: 1.5;
+    line-height: calc(1em + 0.5rem);
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
     padding: 0;
