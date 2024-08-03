@@ -24,6 +24,7 @@
             - [Creating your identity](#creating-your-identity)
             - [Adding the identity to the chain](#adding-the-identity-to-the-chain)
             - [Linking the webring on your website](#linking-the-webring-on-your-website)
+        - [Area of interest](#area-of-interest)
     - [Contribute to the generator](#contribute-to-the-generator)
         - [Setting up the development environment](#setting-up-the-development-environment)
     - [Run the binary `ring.exe`](#run-the-binary-ringexe)
