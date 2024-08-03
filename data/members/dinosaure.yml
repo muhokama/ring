@@ -1,0 +1,17 @@
+id: dinosaure
+display_name: Romain Calascibetta
+bio: A french developer (Paris) who participes to OCaml & MirageOS
+location: France, Paris
+main_link:
+  url: https://blog.osau.re/
+  lang: en
+main_feed:
+  url: https://blog.osau.re/feed.xml
+  lang: en
+additional_links:
+  - title: X
+    url: https://x.com/Dinoosaure/
+  - title: GitHub
+    url: https://github.com/dinosaure
+  - title: Mastodon
+    url: https://mastodon.social/deck/@dinosaure
