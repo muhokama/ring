@@ -12,7 +12,118 @@
 > static site. The medium-term aim is to create a small community, in homage to
 > the [small-web](https://ar.al/2020/08/07/what-is-the-small-web/) of people
 > with personal digital spaces (blog, wiki, site, galleries) who are used to
-> exchanging information on common platforms.
+> exchanging information on common platforms. The project is largely (and
+> freely) inspired by [webring de Merveilles](https://webring.xxiivv.com/)
+
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [ring.muhokama.fun](#ringmuhokamafun)
+    - [Contribute to the content of the webring](#contribute-to-the-content-of-the-webring)
+        - [Join the chain](#join-the-chain)
+            - [Creating your identity](#creating-your-identity)
+            - [Adding the identity to the chain](#adding-the-identity-to-the-chain)
+            - [Linking the webring on your website](#linking-the-webring-on-your-website)
+    - [Contribute to the generator](#contribute-to-the-generator)
+        - [Setting up the development environment](#setting-up-the-development-environment)
+    - [Run the binary `ring.exe`](#run-the-binary-ringexe)
+    - [Launching tests](#launching-tests)
+    - [Project updates](#project-updates)
+    - [Generating documentation locally](#generating-documentation-locally)
+
+<!-- markdown-toc end -->
+
+
+## Contribute to the content of the webring
+
+If you feel that you have something in common with the members of the ring, you
+can of course add your personal space to the webring!
+
+### Join the chain
+
+#### Creating your identity
+
+The process is fairly straightforward: just create a `your-ident.yml` file in
+the [data/members/](data/members) directory. You can draw inspiration from the
+members already created, but the minimum data to be supplied are :
+
+```yaml
+id: your-ident
+main_link:
+  url: your-website-url
+```
+
+> [!WARNING]  
+> Your id must have the same value as the file name (without the extension).
+
+Here's a slightly more expansive example that takes advantage of default
+settings, inspired by my entry in the webring:
+
+```yaml
+id: xvw
+display_name: Xavier Van de Woestyne
+bio: I'm a Belgian developer living in France (Nantes), very interested
+  in statically typed functional programming.
+location: France, Nantes
+main_link:
+  url: https://xvw.lol
+  lang: fra
+main_feed:
+  url: https://xvw.lol/atom.xml
+  lang: fra
+additional_links:
+  - title: X
+    url: https://x.com/vdwxv
+  - title: Mastodon
+    url: https://merveilles.town/xvw
+  - title: Github
+    url: https://github.com
+additional_feeds:
+  - title: Journal
+    url: https://xvw.lol/journal.xml
+```
+
+For the moment, add-on information is used relatively little (the additional
+feeds are used to generate the OPML file) but in the near future, it is likely
+that this data will be used, for example, to build profile pages.
+
+#### Adding the identity to the chain
+
+Now that your identity has been created, you need to add it to the chain. To do
+this, simply add your id to the [data/chain.yml](data/chain.yml) file, and
+you're done! You can refers to [Setting up the development
+environment](#setting-up-the-development-environment) in order to test locally
+your addition.
+
+#### Linking the webring on your website
+
+As its aim is to create links between different sites, it's a good idea to add
+the Webring to your personal site. It's fun to add the Webring to your personal
+site. When you are added to the Webring (and it is activated). You will have two
+dedicated links:
+
+- `https://ring.muhokama.fun/u/<YOUR-IDENT>/pred` which redirects to the
+  previous member of the web ring
+- `https://ring.muhokama.fun/u/<YOUR-IDENT>/succ` which redirects to the next
+  member of the web ring
+  
+An example that could be seen on your page would be: 
+
+```html
+Hey, this site is part of 
+<a href="https://ring.muhokama.fun">ring.muhokama.fun!</a><br />
+<a href="https://ring.muhokama.fun/u/<YOUR-IDENT>/pred">Previous</a> 
+| <a href="https://ring.muhokama.fun/u/<YOUR-IDENT>/succ">Next</a>
+```
+
+But of course you're free to decide how you want it to look!
+
+### Area of interest
+
+The webring index displays a (probably non-exhaustive) list of participants'
+interests. If for some obscure reason you find that references are missing, you
+can modify the `interests` section of the [data/index.md](data/index.md) page.
+
 
 ## Contribute to the generator
 
