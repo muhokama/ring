@@ -11,9 +11,23 @@ has_interests -%}
 {%- endif -%} {%- if has_members -%}
 <section class="members">
   {%- for m in chain -%}
-  <a id="member-{{ m.id }}" href="{{ m.main_link.url.url }}"
-    >{{ m.display_name }}</a
-  >
+  <div>
+    <div>
+      <h2>{{ m.display_name }}</h2>
+      <span>{{ m.main_link.lang }}</span>
+    </div>
+
+    <nav>
+      <a href="{{ m.main_link.url.url }}" title="{{ m.main_link.title }}"
+        >www</a
+      >
+      {%- if m.has_main_feed -%}
+      <a href="{{ m.main_feed.url.url }}" title="{{ m.main_feed.title }}"
+        >feed</a
+      >
+      {%- endif -%}
+    </nav>
+  </div>
   {%- endfor -%}
 </section>
 {%- else -%}

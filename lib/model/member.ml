@@ -137,7 +137,10 @@ let to_outline member =
     |> List.mapi (fun index feed ->
            let title = feed |> Link.title in
            let description =
-             "Additional feed " ^ string_of_int index ^ "of " ^ display_name
+             "Additional feed "
+             ^ string_of_int (succ index)
+             ^ " of "
+             ^ display_name
            in
            feed_to_outline title description feed)
   in

@@ -15,13 +15,24 @@
   </head>
   <body>
     <header>
-      <div class="container"><h1>ring.<span>muhokama</span>.fun</h1></div>
+      <div class="container">
+        <h1 class="logo">ring.<span>muhokama</span>.fun</h1>
+      </div>
     </header>
     <main>
       <div class="container">
         {%- autoescape false -%} {{ yocaml_body }} {%- endautoescape -%}
       </div>
     </main>
-    <footer><div class="container"></div></footer>
+    <footer>
+      <div class="container">
+        <strong class="logo">ring.<span>muhokama</span>.fun</strong><br />
+        <p>
+          is a
+          <a href="https://github.com/muhokama/ring">free software</a> proudly
+          propulsed by <a href="https://gitlab.com/funkywork/yocaml">YOCaml</a>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

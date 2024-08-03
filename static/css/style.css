@@ -30,17 +30,27 @@ header h1 {
     font-size: 280%;
 }
 
-header h1 span {
+.logo span {
     color: var(--main-contrast-light-color);
 }
 
 main {
-    flex: 2;
+    flex: 1;
 }
 
 footer {
     color: var(--main-light-color);
-    flex: 1;
+    font-family: "Inter";
+    padding: 32px 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer p {
+    font-size: 80%;
+    margin: 0;
 }
 
 .container {
@@ -57,7 +67,7 @@ footer {
     margin: 68px 0;
 }
 
-.members > a {
+.members > div {
     border-left: 8px solid var(--main-contrast-light-color);
     background-color: var(--main-contrast-dark-color);
     padding: 8px;
@@ -67,6 +77,37 @@ footer {
     color: var(--main-contrast-light-color);
 }
 
+.members > div > div {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.members > div > div > h2 {
+    font-weight: 600;
+    font-size: 100%;
+    flex: 1;
+}
+
+.members > div > div > span {
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.members > div > nav {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.members > div > nav > a {
+    text-decoration: none;
+    background-color: var(--main-dark-color);
+    padding: 0 6px;
+    font-size: 80%;
+}
+
 .no-members {
     color: var(--main-contrast-light-color);
     border-left: 8px solid var(--main-contrast-dark-color);
@@ -74,4 +115,26 @@ footer {
     margin: 64px 0;
     font-family: "Inria Serif";
     font-size: 180%;
+}
+
+@media all and (max-width: 1024px) {
+    .members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (max-width: 800px) {
+    body {
+        font-size: 1.5rem;
+        line-height: 1.8;
+        line-height: calc(1em + 0.8rem);
+    }
+
+    .members {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    header h1 {
+        line-height: 4rem;
+    }
 }

@@ -9,7 +9,7 @@ let validate =
       let+ lang = optional_or fields "lang" ~default:Lang.Eng Lang.validate
       and+ title =
         optional_or fields ~default:(Url.url url) "title"
-          (string & minimal_length 2)
+          (string & minimal_length 1)
       in
       (title, lang, url))
 
