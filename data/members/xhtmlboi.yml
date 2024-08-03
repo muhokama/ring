@@ -1,0 +1,13 @@
+id: xhtmlboi
+display_name: The XHTMLBoy
+bio:
+  I am passionate about computer development and this site/blog will serve as a space to
+  document my attempts to become a Java Champion or Google Developer Expert. Apart from
+  software design and (valid) XHTML, I have a particular passion for everything related to
+  the concept of muscles. I love muscular people.
+main_link:
+  url: https://xhtmlboi.github.io
+  lang: eng
+main_feed:
+  url: https://xhtmlboi.github.io/feed.xml
+  lang: eng
