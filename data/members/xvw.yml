@@ -9,3 +9,13 @@ main_link:
 main_feed:
   url: https://xvw.lol/atom.xml
   lang: fra
+additional_links:
+  - title: X
+    url: https://x.com/vdwxv
+  - title: Mastodon
+    url: https://merveilles.town/xvw
+  - title: Github
+    url: https://github.com
+additional_feeds:
+  - title: Journal
+    url: https://xvw.lol/journal.xml
