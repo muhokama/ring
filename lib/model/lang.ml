@@ -5,8 +5,8 @@ type t = Eng | Fra
 let validate =
   let open Yocaml.Data.Validation in
   token & function
-  | "fra" -> Ok Fra
-  | "eng" -> Ok Eng
+  | "fra" | "fr" -> Ok Fra
+  | "eng" | "en" -> Ok Eng
   | given -> fail_with ~given "Invalid Lang Value"
 
 let to_string = function Fra -> "fra" | Eng -> "eng"
