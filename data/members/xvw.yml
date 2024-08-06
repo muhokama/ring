@@ -15,7 +15,7 @@ additional_links:
   - title: Mastodon
     url: https://merveilles.town/xvw
   - title: Github
-    url: https://github.com
+    url: https://github.com/xvw
 additional_feeds:
   - title: Journal
     url: https://xvw.lol/journal.xml
