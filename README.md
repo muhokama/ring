@@ -175,10 +175,6 @@ scope of this directory. The setup should work with Vim and Emacs (if they are
 configured to work with OCaml) and with any editor configured to use LSP (Merlin
 and OCaml-lsp-server being development dependencies of the project).
 
-The setup should work with Vim and Emacs (if they are configured to work with
-OCaml) and with any editor configured to use LSP (Merlin and OCaml-lsp-server
-being development dependencies of the project).
-
 
 ## Run the binary `ring.exe`
 
@@ -202,7 +198,8 @@ The common options are:
 
 - `--target PATH` describes the compilation target (the directory where the ring
   is to be built)
-- `--source PATH` describes the compilation source (the directory where the data of the ring are located)
+- `--source PATH` describes the compilation source (the directory where the data
+  of the ring are located)
 - `--log-level (info | app | debug | error | warning)` describes the log-level
 
 ## Launching tests
