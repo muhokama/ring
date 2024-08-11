@@ -29,3 +29,20 @@ let print_validated_value pp_ok x =
   @@ Format.asprintf "%a"
        (Format.pp_print_result ~ok:pp_ok ~error:pp_value_error)
        x
+
+let make_member ident url =
+  let open Yocaml.Data in
+  ( ident,
+    record
+      [ ("id", string ident); ("main_link", record [ ("url", string url) ]) ] )
+
+let make_chain l =
+  let chain, members = List.split l in
+  Yocaml.Data.Validation.list_of Gem.Model.Member.validate
+    (Yocaml.Data.list members)
+  |> Result.map (fun members -> Gem.Model.Chain.init ~chain ~members)
+
+let member_1 = make_member "member-1" "https://xvw.lol"
+let member_2 = make_member "member-2" "https://wvx.lol"
+let member_3 = make_member "member-3" "https://xxx.lol"
+let member_4 = make_member "member-4" "https://vvv.lol"
