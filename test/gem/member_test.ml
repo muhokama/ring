@@ -15,7 +15,7 @@ let%expect_test "validate a minimal member" =
   [%expect
     {|
     {"id": "xwv", "display_name": "xwv", "has_bio": false, "bio": null,
-    "has_avatar": false, "main_link":
+    "has_avatar": false, "avatar": null, "main_link":
      {"title": "xvw.lol", "lang": "eng", "url":
       {"url": "https://xvw.lol", "scheme": "https", "url_without_scheme":
        "xvw.lol"}},
@@ -55,8 +55,8 @@ let%expect_test "validate a full member" =
   [%expect
     {|
     {"id": "xwv", "display_name": "xwv", "has_bio": true, "bio":
-     "I an OCaml programmer from Belgium, living in France", "has_avatar": true,
-    "main_link":
+     "I an OCaml programmer from Belgium, living in France", "has_avatar":
+     false, "avatar": null, "main_link":
      {"title": "xvw.lol", "lang": "eng", "url":
       {"url": "https://xvw.lol", "scheme": "https", "url_without_scheme":
        "xvw.lol"}},
