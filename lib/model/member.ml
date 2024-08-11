@@ -4,7 +4,7 @@ type t = {
   id : string;
   display_name : string option;
   bio : string option;
-  has_avatar : bool;
+  avatar : string option;
   nouns : string list;
   main_link : Link.t;
   main_feed : Link.t option;
@@ -26,7 +26,7 @@ let validate =
       and+ display_name =
         optional fields "display_name" (string & minimal_length 2)
       and+ bio = optional fields "bio" (string & minimal_length 5)
-      and+ has_avatar = optional_or fields ~default:false "has_avatar" bool
+      and+ avatar = optional fields "avatar" string
       and+ main_link = required fields "main_link" Link.validate
       and+ main_feed = optional fields "main_feed" Link.validate
       and+ nouns = optional_or fields ~default:[] "nouns" (list_of token)
@@ -42,7 +42,7 @@ let validate =
         id;
         display_name;
         bio;
-        has_avatar;
+        avatar;
         main_link;
         main_feed;
         nouns;
@@ -55,7 +55,7 @@ let normalize
     ({
        id;
        bio;
-       has_avatar;
+       avatar;
        main_link;
        main_feed;
        nouns;
@@ -70,7 +70,8 @@ let normalize
     ("display_name", string @@ display_name m);
     ("has_bio", has_opt bio);
     ("bio", option string bio);
-    ("has_avatar", bool has_avatar);
+    ("has_avatar", has_opt avatar);
+    ("avatar", option string avatar);
     ("main_link", Link.normalize main_link);
     ("has_main_feed", has_opt main_feed);
     ("main_feed", option Link.normalize main_feed);
@@ -95,7 +96,7 @@ let equal
       id;
       bio;
       display_name;
-      has_avatar;
+      avatar;
       main_link;
       main_feed;
       nouns;
@@ -106,7 +107,7 @@ let equal
   String.equal id other.id
   && Option.equal String.equal bio other.bio
   && Option.equal String.equal display_name other.display_name
-  && Bool.equal has_avatar other.has_avatar
+  && Option.equal String.equal avatar other.avatar
   && Link.equal main_link other.main_link
   && Option.equal Link.equal main_feed other.main_feed
   && List.equal String.equal nouns other.nouns

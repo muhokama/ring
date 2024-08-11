@@ -17,6 +17,7 @@ module Make (R : Sigs.RESOLVABLE) = struct
     let cname = Path.(static / "CNAME")
     let index = Path.(data / "index.md")
     let static_images = Path.(static / "images")
+    let avatars = Path.(data / "avatars")
   end
 
   module Target = struct
@@ -29,6 +30,8 @@ module Make (R : Sigs.RESOLVABLE) = struct
     let fonts = Path.(R.target / "fonts")
     let index = Path.(R.target / "index.html")
     let images = Path.(R.target / "images")
+    let avatars = Path.(images / "avatars")
+    let member ~id = Path.(members / id / "index.html")
 
     let member_redirection ~id pred_or_succ =
       let target = Path.(members / id) in

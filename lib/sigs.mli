@@ -43,6 +43,7 @@ module type RESOLVER = sig
     val members : Yocaml.Path.t
     val chain : Yocaml.Path.t
     val index : Yocaml.Path.t
+    val avatars : Yocaml.Path.t
 
     val template : Yocaml.Path.fragment -> Yocaml.Path.t
     (** [template ?ext file] resolve a template file located into [templates]
@@ -71,5 +72,7 @@ module type RESOLVER = sig
     val images : Yocaml.Path.t
     val members : Yocaml.Path.t
     val member_redirection : id:string -> [ `Pred | `Succ ] -> Yocaml.Path.t
+    val member : id:string -> Yocaml.Path.t
+    val avatars : Yocaml.Path.t
   end
 end

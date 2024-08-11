@@ -16,7 +16,11 @@
   <body>
     <header>
       <div class="container">
-        <h1 class="logo">ring.<span>muhokama</span>.fun</h1>
+        <h1 class="logo">
+          <a href="/">ring.<span>muhokama</span>.fun</a> {%- if has_sub_path -%}
+          <span class="sub-path">{{ sub_path }}</span>
+          {%- endif -%}
+        </h1>
       </div>
     </header>
     <main>

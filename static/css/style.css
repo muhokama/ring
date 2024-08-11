@@ -7,7 +7,6 @@
 
 body {
     min-height: 100vh;
-    background-color: var(--main-light-color);
     color: var(--main-light-color);
     display: flex;
     flex-direction: column;
@@ -30,7 +29,22 @@ header h1 {
     font-size: 280%;
 }
 
+.logo a {
+    text-decoration: none;
+    color: var(--main-light-color);
+}
+
 .logo span {
+    color: var(--main-contrast-light-color);
+}
+
+.logo span.sub-path {
+    font-weight: 200;
+    color: var(--main-light-color);
+}
+
+.logo span.sub-path::before {
+    content: "/u/";
     color: var(--main-contrast-light-color);
 }
 
@@ -117,6 +131,65 @@ footer p {
     font-size: 180%;
 }
 
+.member {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+}
+
+.member > div:first-child {
+    flex: 1;
+}
+
+.member > div:last-child {
+    flex: 4;
+}
+
+.member section {
+    margin-top: 64px;
+    font-family: "Inter";
+}
+
+.member h2 {
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.member .link-list {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.member .link-list > div {
+    background-color: var(--main-contrast-dark-color);
+    padding: 4px 12px;
+    border-left: 4px solid var(--main-contrast-light-color);
+}
+
+.member nav > div > a,
+.member .link-list > div > a {
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.member nav {
+    display: flex;
+    background-color: var(--main-contrast-dark-color);
+    font-family: "Inter";
+    flex-direction: row;
+}
+
+.member nav > div {
+    flex: 1;
+    padding: 4px 8px;
+}
+
+.member nav > div:last-child {
+    text-align: right;
+}
+
 @media all and (max-width: 1024px) {
     .members {
         grid-template-columns: repeat(2, 1fr);
@@ -136,5 +209,17 @@ footer p {
 
     header h1 {
         line-height: 4rem;
+    }
+
+    .member {
+        flex-direction: column;
+    }
+
+    .member .link-list {
+        flex-direction: column;
+    }
+
+    .member img {
+        margin: 32px auto;
     }
 }

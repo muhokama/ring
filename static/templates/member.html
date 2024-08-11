@@ -1,0 +1,46 @@
+<div class="member">
+  <div>
+    {%- if member.has_avatar -%}
+    <img src="/images/avatars/{{ member.avatar }}" />
+    {%- else -%}
+    <img src="/images/na.svg" />
+    {%- endif -%}
+    <nav>
+      <div><a href="/u/{{ pred.id }}/">pred</a></div>
+      <div><a href="/u/{{ succ.id }}/">succ</a></div>
+    </nav>
+  </div>
+  <div>
+    {%- if member.has_bio -%}
+    <p class="bio">{{ member.bio }}</p>
+    {%- endif -%}
+    <section class="links">
+      <h2>Links</h2>
+      <div class="link-list">
+        <div>
+          <a href="{{ member.main_link.url.url }}"
+            >{{ member.main_link.title }}</a
+          >
+        </div>
+        {%- for link in member.additional_links -%}
+        <div><a href="{{ link.url.url }}">{{ link.title }}</a></div>
+        {%- endfor -%}
+      </div>
+    </section>
+    {%- if member.has_main_feed -%}
+    <section class="feeds">
+      <h2>Feeds</h2>
+      <div class="link-list">
+        <div>
+          <a href="{{ member.main_feed.url.url }}"
+            >{{ member.main_feed.title }}</a
+          >
+        </div>
+        {%- for link in member.additional_feeds -%}
+        <div><a href="{{ link.url.url }}">{{ link.title }}</a></div>
+        {%- endfor -%}
+      </div>
+    </section>
+    {%- endif -%}
+  </div>
+</div>

@@ -41,6 +41,8 @@ include Yocaml.Required.DATA_INJECTABLE with type t := t
 val id : t -> string
 (** Returns the id of a member. *)
 
+val display_name : t -> string
+
 (** {1 OPML generation} *)
 
 val to_outline : t -> Yocaml_syndication.Opml.outline list

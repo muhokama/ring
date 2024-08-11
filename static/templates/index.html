@@ -13,7 +13,7 @@ has_interests -%}
   {%- for m in chain -%}
   <div>
     <div>
-      <h2>{{ m.display_name }}</h2>
+      <h2><a href="/u/{{ m.id }}">{{ m.display_name }}</a></h2>
       <span>{{ m.main_link.lang }}</span>
     </div>
 
