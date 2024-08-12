@@ -5,9 +5,15 @@ bio:
   document my attempts to become a Java Champion or Google Developer Expert. Apart from
   software design and (valid) XHTML, I have a particular passion for everything related to
   the concept of muscles. I love muscular people.
+avatar: "xhtmlboi.png"
 main_link:
   url: https://xhtmlboi.github.io
   lang: eng
 main_feed:
   url: https://xhtmlboi.github.io/feed.xml
   lang: eng
+additional_links:
+  - title: X
+    url: https://x.com/the_xhtmlboy
+  - title: Github
+    url: https://github.com/xhtmlboi
