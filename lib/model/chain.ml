@@ -57,10 +57,17 @@ let fold f start chain =
 
 let to_list = List.map (fun { pred; curr; succ } -> (curr, (pred, succ)))
 
+let ring_feed =
+  Yocaml_syndication.Opml.subscription ~title:"ring.muhokama.fun"
+    ~description:"federated blog of Muhokama webring"
+    ~html_url:"https://ring.muhokama.fun"
+    ~feed_url:"https://ring.muhokama.fun/atom.xml" ()
+
 let to_opml =
   let open Yocaml.Task in
   List.concat_map (fun { curr; _ } -> Member.to_outline curr)
-  |>> Yocaml_syndication.Opml.opml2_from ~title:"ring.muhokama.fun" ()
+  |>> lift (fun outlines -> ring_feed :: outlines)
+  >>> Yocaml_syndication.Opml.opml2_from ~title:"ring.muhokama.fun" ()
 
 let normalize_elt { pred; curr; succ } =
   let open Yocaml.Data in
