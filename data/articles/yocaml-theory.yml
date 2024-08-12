@@ -1,0 +1,8 @@
+title: Some highlights of how my blog is generated
+synopsis: A brief (and slightly theoretical) description of how YOCaml
+  works in general, which can be used as a light introduction to
+  arrows.
+date: 2021-11-14
+authors: [xhtmlboi, xvw]
+link: https://xhtmlboi.github.io/articles/yocaml.html
+tags: [ocaml, static, blog, arrow]
