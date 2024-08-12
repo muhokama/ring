@@ -25,6 +25,7 @@
             - [Adding the identity to the chain](#adding-the-identity-to-the-chain)
             - [Linking the webring on your website](#linking-the-webring-on-your-website)
         - [Area of interest](#area-of-interest)
+        - [Participation in the federated blog](#participation-in-the-federated-blog)
     - [Contribute to the generator](#contribute-to-the-generator)
         - [Setting up the development environment](#setting-up-the-development-environment)
     - [Run the binary `ring.exe`](#run-the-binary-ringexe)
@@ -124,6 +125,15 @@ But of course you're free to decide how you want it to look!
 The webring index displays a (probably non-exhaustive) list of participants'
 interests. If for some obscure reason you find that references are missing, you
 can modify the `interests` section of the [data/index.md](data/index.md) page.
+
+### Participation in the federated blog
+
+The [federated blog](https://ring.muhokama.fun/blog.html) allows you to share
+articles that are unified by the themes of the webring. Each reference to an
+article lives in the [/data/articles](data/articles) directory and if you are
+part of the ring, you can add your articles freely. Imported items are
+referenced in the [ring's Atom feed](https://ring.muhokama.fun/atom.xml).
+
 
 
 ## Contribute to the generator
