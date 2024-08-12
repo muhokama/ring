@@ -1,0 +1,8 @@
+title: Effective ML Through Merlin's Destruct Command
+synopsis: This article presents the use of the destruct command in Merlin
+  and OCaml-lsp to generate missing patterns, or to specify patterns in
+  pattern matching.
+date: 2024-05-29
+authors: [xvw]
+link: https://tarides.com/blog/2024-05-29-effective-ml-through-merlin-s-destruct-command/
+tags: [ocaml, lsp, ide, emacs, vscode, vim, merlin]

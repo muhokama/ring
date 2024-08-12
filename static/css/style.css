@@ -74,6 +74,27 @@ footer p {
     padding: 32px 12px;
 }
 
+header > .container {
+    display: flex;
+    flex-direction: row;
+}
+
+header > .container > h1 {
+    flex: 1;
+}
+
+.button,
+header > .container nav > a {
+    font-family: "Inter";
+    text-decoration: none;
+    background-color: var(--main-contrast-dark-color);
+    padding: 4px 12px;
+}
+
+header > .container nav > a {
+    font-size: 80%;
+}
+
 .members {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -82,7 +103,7 @@ footer p {
 }
 
 .members > div {
-    border-left: 8px solid var(--main-contrast-light-color);
+    border-left: 6px solid var(--main-contrast-light-color);
     background-color: var(--main-contrast-dark-color);
     padding: 8px;
     font-family: "Inter";
@@ -122,7 +143,7 @@ footer p {
     font-size: 80%;
 }
 
-.no-members {
+.no-elts {
     color: var(--main-contrast-light-color);
     border-left: 8px solid var(--main-contrast-dark-color);
     padding: 32px;
@@ -165,7 +186,7 @@ footer p {
 .member .link-list > div {
     background-color: var(--main-contrast-dark-color);
     padding: 4px 12px;
-    border-left: 4px solid var(--main-contrast-light-color);
+    font-size: 80%;
 }
 
 .member nav > div > a,
@@ -190,13 +211,84 @@ footer p {
     text-align: right;
 }
 
+section.articles {
+    margin-top: 64px;
+    font-size: 90%;
+    padding-bottom: 32px;
+}
+
+section.articles article {
+    border-bottom: 4px solid var(--main-contrast-dark-color);
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+}
+
+section.articles article:last-child {
+    border-bottom-color: transparent;
+}
+
+section.articles .lang > span {
+    margin-bottom: 12px;
+    background-color: var(--main-contrast-dark-color);
+    padding: 4px 12px;
+    display: inline-block;
+    color: var(--main-contrast-light-color);
+    font-family: "Inter";
+    text-transform: uppercase;
+}
+
+section.articles .date span {
+    color: var(--main-contrast-light-color);
+    font-weight: 700;
+    font-family: "Inter";
+}
+
+section.articles .date a {
+    margin-left: 4px;
+}
+
+section.articles h2 {
+    margin-bottom: 12px;
+}
+
+section.articles h2 > a {
+    text-decoration: none;
+    color: var(--main-light-color);
+    font-weight: 300;
+}
+
+section.articles p {
+    padding: 12px 0;
+    font-weight: 200;
+}
+
+section.articles ul.tags {
+    padding: 0;
+}
+
+section.articles ul.tags > li:first-child {
+    padding-left: 0;
+}
+section.articles ul.tags > li {
+    list-style: none;
+    display: inline-block;
+    padding: 4px;
+    font-weight: 300;
+    font-family: "Inter";
+}
+
+section.articles ul.tags > li::before {
+    content: "#";
+    color: var(--main-contrast-light-color);
+}
+
 @media all and (max-width: 1024px) {
     .members {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media all and (orientation: portrait), @media all and (max-width: 800px) {
+@media all and (orientation: portrait), @media all and (max-width: 820px) {
     body {
         font-size: 1.5rem;
         line-height: 1.8;
@@ -209,6 +301,7 @@ footer p {
 
     header h1 {
         line-height: 4rem;
+        margin-bottom: 32px;
     }
 
     .member {
@@ -221,5 +314,9 @@ footer p {
 
     .member img {
         margin: 32px auto;
+    }
+
+    header > .container {
+        flex-direction: column;
     }
 }

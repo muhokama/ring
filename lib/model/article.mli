@@ -7,6 +7,7 @@ val authors_in_chain : Chain.t -> t -> bool
 (** Ensure that authors are present in chain. *)
 
 val pp : Format.formatter -> t -> unit
+val sort : t -> t -> int
 
 (** {1 Dealing as metadata} *)
 
