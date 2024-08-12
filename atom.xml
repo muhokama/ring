@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://ring.muhokama.fun/atom.xml</id>
+  <title type="text">ring.muhokama.fun</title>
+  <subtitle type="text">federated blog of Muhokama webring</subtitle>
+  <generator uri="https://github.com/xhtmlboi/yocaml" version="2">YOCaml</generator>
+  <updated>2024-05-29T00:00:00Z</updated>
+  <author>
+    <name>Xavier Van de Woestyne</name>
+    <uri>xvw.lol</uri>
+  </author>
+  <author>
+    <name>The XHTMLBoy</name>
+    <uri>xhtmlboi.github.io</uri>
+  </author>
+  <author>
+    <name>Maiste</name>
+    <uri>maiste.fr</uri>
+  </author>
+  <author>
+    <name>Romain Calascibetta</name>
+    <uri>blog.osau.re/</uri>
+  </author>
+  <author>
+    <name>Grim</name>
+    <uri>gr-im.github.io</uri>
+  </author>
+  <link href="https://ring.muhokama.fun/atom.xml" rel="self"/>
+  <link href="https://ring.muhokama.fun"/>
+  <entry>
+    <id>
+      https://tarides.com/blog/2024-05-29-effective-ml-through-merlin-s-destruct-command/
+    </id>
+    <title type="text">Effective ML Through Merlin&apos;s Destruct Command</title>
+    <updated>2024-05-29T00:00:00Z</updated>
+    <summary type="text">
+      This article presents the use of the destruct command in Merlin and OCaml-lsp to generate missing patterns, or to specify patterns in pattern matching.
+    </summary>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://tarides.com/blog/2024-05-29-effective-ml-through-merlin-s-destruct-command/" rel="alternate" title="Effective ML Through Merlin&apos;s Destruct Command"/>
+    <category term="ocaml"/>
+    <category term="lsp"/>
+    <category term="ide"/>
+    <category term="emacs"/>
+    <category term="vscode"/>
+    <category term="vim"/>
+    <category term="merlin"/>
+  </entry>
+  <entry>
+    <id>https://xvw.lol/pages/modules-import.html</id>
+    <title type="text">OCaml, modules and import schemes</title>
+    <updated>2023-10-31T00:00:00Z</updated>
+    <summary type="text">
+      In this article, we&apos;re going to look at how generalised openings can be used to reproduce a common practice in other languages, which I call, somewhat pompously, import strategies,
+    </summary>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://xvw.lol/pages/modules-import.html" rel="alternate" title="OCaml, modules and import schemes"/>
+    <category term="ocaml"/>
+    <category term="module"/>
+  </entry>
+  <entry>
+    <id>https://xvw.lol/pages/oop-refl.html</id>
+    <title type="text">Guarded methods using equality witnesses</title>
+    <updated>2022-05-29T00:00:00Z</updated>
+    <summary type="text">
+      Guarded methods allow constraints to be attached to the receiver (self) only for certain methods, so that these methods can only be called if the receiver satisfies these constraints (these guards). OCaml does not syntactically allow this type of method to be defined directly. In this note, we&apos;ll look at how to encode them using a type equality witness.
+    </summary>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://xvw.lol/pages/oop-refl.html" rel="alternate" title="Guarded methods using equality witnesses"/>
+    <category term="ocaml"/>
+    <category term="oop"/>
+    <category term="refl"/>
+    <category term="gadt"/>
+  </entry>
+</feed>
