@@ -14,6 +14,7 @@ let run (module R : Sigs.RESOLVER) () =
   >>= Css.run (module R)
   >>= Images.run (module R)
   >>= Articles.run (module R) chain
+  >>= Atom.run (module R) chain
   >>= Opml.run (module R) chain
   >>= Chain.run (module R) chain
   >>= Index.run (module R) chain

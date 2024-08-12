@@ -52,3 +52,15 @@ let pp ppf article =
     (article |> normalize |> Yocaml.Data.record)
 
 let sort a b = Yocaml.Archetype.Datetime.compare a.date b.date
+
+let to_atom chain { title; synopsis; date; tags; authors; link } =
+  let open Yocaml_syndication in
+  let title = title in
+  let authors = List.map (Chain.as_author chain) authors in
+  let updated = Datetime.make date in
+  let categories = List.map Category.make tags in
+  let url = link |> Link.url |> Url.to_string in
+  let summary = synopsis |> Option.map Atom.text in
+  let links = [ Atom.alternate url ~title ] in
+  Atom.entry ~authors ~updated ~categories ?summary ~links
+    ~title:(Atom.text title) ~id:url ()

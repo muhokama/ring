@@ -69,6 +69,7 @@ module type RESOLVER = sig
     val css : Yocaml.Path.t
     val fonts : Yocaml.Path.t
     val opml : Yocaml.Path.t
+    val atom : Yocaml.Path.t
     val ring_opml : Yocaml.Path.t
     val index : Yocaml.Path.t
     val images : Yocaml.Path.t

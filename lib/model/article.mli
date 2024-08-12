@@ -8,6 +8,7 @@ val authors_in_chain : Chain.t -> t -> bool
 
 val pp : Format.formatter -> t -> unit
 val sort : t -> t -> int
+val to_atom : Chain.t -> t -> Yocaml_syndication.Atom.entry
 
 (** {1 Dealing as metadata} *)
 

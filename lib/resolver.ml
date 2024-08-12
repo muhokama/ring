@@ -26,6 +26,7 @@ module Make (R : Sigs.RESOLVABLE) = struct
     let root = R.target
     let cache = Path.(R.target / "cache")
     let opml = Path.(R.target / "opml")
+    let atom = Path.(R.target / "atom.xml")
     let ring_opml = Path.(opml / "ring.opml")
     let members = Path.(R.target / "u")
     let css = Path.(R.target / "css")

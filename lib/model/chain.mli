@@ -31,6 +31,8 @@ val to_list : t -> (Member.t * (Member.t * Member.t)) list
 val to_opml : (t, string) Yocaml.Task.t
 (** [to_opml] An arrow that lift a chain into an OPML file. *)
 
+val as_author : t -> string -> Yocaml_syndication.Person.t
+val to_authors : t -> Yocaml_syndication.Person.t Yocaml.Nel.t
 val is_empty : t -> bool
 val normalize : t -> Yocaml.Data.t
 

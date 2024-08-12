@@ -69,5 +69,18 @@ let normalize_elt { pred; curr; succ } =
     @ [ ("pred", string @@ Member.id pred); ("succ", string @@ Member.id succ) ]
     )
 
+let unknow_author = Yocaml_syndication.Person.make "Unknown author"
 let normalize = Yocaml.Data.list_of normalize_elt
 let is_empty = List.is_empty
+
+let to_authors chain =
+  match List.map (fun { curr; _ } -> Member.as_author curr) chain with
+  | [] -> (* Should never happen *) Yocaml.Nel.singleton unknow_author
+  | x :: xs -> Yocaml.Nel.(x :: xs)
+
+let as_author chain id =
+  chain
+  |> List.find_map (fun { curr; _ } ->
+         if String.equal (Member.id curr) id then Some curr else None)
+  |> Option.fold ~none:unknow_author (* Should never happen *)
+       ~some:Member.as_author

@@ -282,6 +282,11 @@ section.articles ul.tags > li::before {
     color: var(--main-contrast-light-color);
 }
 
+footer nav {
+    margin-top: 32px;
+    font-size: 80%;
+}
+
 @media all and (max-width: 1024px) {
     .members {
         grid-template-columns: repeat(2, 1fr);
