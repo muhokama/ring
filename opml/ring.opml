@@ -5,6 +5,7 @@
     <docs>http://opml.org/spec2.opml</docs>
   </head>
   <body>
+    <outline description="federated blog of Muhokama webring" htmlUrl="https://ring.muhokama.fun" text="ring.muhokama.fun" title="ring.muhokama.fun" type="rss" xmlUrl="https://ring.muhokama.fun/atom.xml"/>
     <outline description="Main feed of Xavier Van de Woestyne" htmlUrl="https://xvw.lol" language="fra" text="xvw.lol" title="xvw.lol" type="rss" xmlUrl="https://xvw.lol/atom.xml"/>
     <outline description="Additional feed 1 of Xavier Van de Woestyne" language="fra" text="Journal" title="Journal" type="rss" xmlUrl="https://xvw.lol/journal.xml"/>
     <outline description="Main feed of The XHTMLBoy" htmlUrl="https://xhtmlboi.github.io" language="eng" text="xhtmlboi.github.io" title="xhtmlboi.github.io" type="rss" xmlUrl="https://xhtmlboi.github.io/feed.xml"/>
