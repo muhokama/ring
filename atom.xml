@@ -81,4 +81,25 @@
     <category term="refl"/>
     <category term="gadt"/>
   </entry>
+  <entry>
+    <id>https://xhtmlboi.github.io/articles/yocaml.html</id>
+    <title type="text">Some highlights of how my blog is generated</title>
+    <updated>2021-11-14T00:00:00Z</updated>
+    <summary type="text">
+      A brief (and slightly theoretical) description of how YOCaml works in general, which can be used as a light introduction to arrows.
+    </summary>
+    <author>
+      <name>The XHTMLBoy</name>
+      <uri>xhtmlboi.github.io</uri>
+    </author>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://xhtmlboi.github.io/articles/yocaml.html" rel="alternate" title="Some highlights of how my blog is generated"/>
+    <category term="ocaml"/>
+    <category term="static"/>
+    <category term="blog"/>
+    <category term="arrow"/>
+  </entry>
 </feed>
