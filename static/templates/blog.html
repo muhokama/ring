@@ -1,0 +1,30 @@
+{%- autoescape false -%} {{ yocaml_body }} {%- endautoescape -%} {%- if
+has_articles -%}
+<section class="articles">
+  {%- for article in articles -%}
+  <article>
+    <div class="info">
+      <div class="lang"><span>{{ article.link.lang }}</span></div>
+      <h2><a href="{{ article.link.url.url }}">{{ article.title }}</a></h2>
+      <div class="date">
+        published on <span>{{ article.date.repr.date }}</span> by {% for author
+        in article.authors -%}
+        <a class="button" href="/u/{{ author  }}">{{ author }}</a>
+        {%- endfor -%}
+      </div>
+    </div>
+    {%- if article.has_synopsis -%}
+    <p>{{ article.synopsis }}</p>
+    {%- endif -%} {%- if article.has_tags -%}
+    <ul class="tags">
+      {%- for tag in article.tags -%}
+      <li>{{ tag }}</li>
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+  </article>
+  {%- endfor -%}
+</section>
+{%- else -%}
+<section class="no-elts">There are no federated articles</section>
+{%- endif -%}

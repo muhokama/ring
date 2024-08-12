@@ -1,0 +1,10 @@
+title: OCaml, modules and import schemes
+synopsis: In this article, we're going to look at how generalised openings
+  can be used to reproduce a common practice in other languages,
+  which I call, somewhat pompously, import strategies,
+date: 2023-10-31
+authors: [xvw]
+link:
+  url: https://xvw.lol/pages/modules-import.html
+  lang: fra
+tags: [ocaml, module]

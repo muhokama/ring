@@ -31,6 +31,8 @@ val to_string : t -> string
 val equal : t -> t -> bool
 (** Equality between members. *)
 
+val as_author : t -> Yocaml_syndication.Person.t
+
 (** {1 Dealing as metadata} *)
 
 include Yocaml.Required.DATA_READABLE with type t := t

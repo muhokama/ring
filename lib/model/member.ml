@@ -146,3 +146,8 @@ let to_outline member =
            feed_to_outline title description feed)
   in
   main_feed @ additional_feeds
+
+let as_author m =
+  Yocaml_syndication.Person.make
+    ~uri:(m.main_link |> Link.url |> Url.url)
+    (display_name m)

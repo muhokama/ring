@@ -1,0 +1,13 @@
+title: Guarded methods using equality witnesses
+synopsis: Guarded methods allow constraints to be attached to the receiver
+  (self) only for certain methods, so that these methods can only
+  be called if the receiver satisfies these constraints (these guards).
+  OCaml does not syntactically allow this type of method to be defined
+  directly. In this note, we'll look at how to encode them using a
+  type equality witness.
+date: 2022-05-29
+authors: [xvw]
+link:
+  url: https://xvw.lol/pages/oop-refl.html
+  lang: fra
+tags: [ocaml, oop, refl, gadt]

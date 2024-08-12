@@ -41,8 +41,10 @@ module type RESOLVER = sig
     val fonts : Yocaml.Path.t
     val templates : Yocaml.Path.t
     val members : Yocaml.Path.t
+    val articles : Yocaml.Path.t
     val chain : Yocaml.Path.t
     val index : Yocaml.Path.t
+    val blog : Yocaml.Path.t
     val avatars : Yocaml.Path.t
 
     val template : Yocaml.Path.fragment -> Yocaml.Path.t
@@ -67,6 +69,7 @@ module type RESOLVER = sig
     val css : Yocaml.Path.t
     val fonts : Yocaml.Path.t
     val opml : Yocaml.Path.t
+    val atom : Yocaml.Path.t
     val ring_opml : Yocaml.Path.t
     val index : Yocaml.Path.t
     val images : Yocaml.Path.t
@@ -74,5 +77,6 @@ module type RESOLVER = sig
     val member_redirection : id:string -> [ `Pred | `Succ ] -> Yocaml.Path.t
     val member : id:string -> Yocaml.Path.t
     val avatars : Yocaml.Path.t
+    val blog : Yocaml.Path.t
   end
 end

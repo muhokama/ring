@@ -4,14 +4,15 @@ type t = string * Lang.t * Url.t
 
 let validate =
   let open Yocaml.Data.Validation in
-  record (fun fields ->
-      let* url = required fields "url" Url.validate in
-      let+ lang = optional_or fields "lang" ~default:Lang.Eng Lang.validate
-      and+ title =
-        optional_or fields ~default:(Url.url url) "title"
-          (string & minimal_length 1)
-      in
-      (title, lang, url))
+  (Url.validate $ fun url -> (Url.url url, Lang.Eng, url))
+  / record (fun fields ->
+        let* url = required fields "url" Url.validate in
+        let+ lang = optional_or fields "lang" ~default:Lang.Eng Lang.validate
+        and+ title =
+          optional_or fields ~default:(Url.url url) "title"
+            (string & minimal_length 1)
+        in
+        (title, lang, url))
 
 let normalize_underlying_link (title, lang, url) =
   let open Yocaml.Data in
