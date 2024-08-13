@@ -4,7 +4,7 @@
   <title type="text">ring.muhokama.fun</title>
   <subtitle type="text">federated blog of Muhokama webring</subtitle>
   <generator uri="https://github.com/xhtmlboi/yocaml" version="2">YOCaml</generator>
-  <updated>2024-05-29T00:00:00Z</updated>
+  <updated>2024-08-10T00:00:00Z</updated>
   <author>
     <name>Xavier Van de Woestyne</name>
     <uri>xvw.lol</uri>
@@ -28,6 +28,22 @@
   <link href="https://ring.muhokama.fun/atom.xml" rel="self"/>
   <link href="https://ring.muhokama.fun"/>
   <entry>
+    <id>https://gr-im.github.io/a/rank-aggregation.html</id>
+    <title type="text">Sorting things, rank-aggregation (beginner&apos;s approach)</title>
+    <updated>2024-08-10T00:00:00Z</updated>
+    <summary type="text">
+      Summary of a response about how to order products by their votes/reviews using rank aggregation (using Shopify approach).
+    </summary>
+    <author>
+      <name>Grim</name>
+      <uri>gr-im.github.io</uri>
+    </author>
+    <link href="https://gr-im.github.io/a/rank-aggregation.html" rel="alternate" title="Sorting things, rank-aggregation (beginner&apos;s approach)"/>
+    <category term="ocaml"/>
+    <category term="rank"/>
+    <category term="stats"/>
+  </entry>
+  <entry>
     <id>
       https://tarides.com/blog/2024-05-29-effective-ml-through-merlin-s-destruct-command/
     </id>
@@ -48,6 +64,22 @@
     <category term="vscode"/>
     <category term="vim"/>
     <category term="merlin"/>
+  </entry>
+  <entry>
+    <id>https://gr-im.github.io/a/fold-gof.html</id>
+    <title type="text">Fold for cheap pattern-matching</title>
+    <updated>2024-03-18T00:00:00Z</updated>
+    <summary type="text">
+      Summary of a response regarding the encoding of visitors without pattern matching in OCaml, using the fold function.
+    </summary>
+    <author>
+      <name>Grim</name>
+      <uri>gr-im.github.io</uri>
+    </author>
+    <link href="https://gr-im.github.io/a/fold-gof.html" rel="alternate" title="Fold for cheap pattern-matching"/>
+    <category term="ocaml"/>
+    <category term="pattern"/>
+    <category term="fp"/>
   </entry>
   <entry>
     <id>https://xvw.lol/pages/modules-import.html</id>
