@@ -1,0 +1,7 @@
+title: Fold for cheap pattern-matching
+synopsis: Summary of a response regarding the encoding of visitors without
+  pattern matching in OCaml, using the fold function.
+date: 2024-03-18
+authors: [grim]
+link: https://gr-im.github.io/a/fold-gof.html
+tags: [ocaml, pattern, fp]
