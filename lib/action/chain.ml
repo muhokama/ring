@@ -5,19 +5,18 @@ let member (module R : Sigs.RESOLVER) pred_or_succ current_member target_member
       ~id:(Model.Member.id current_member)
       pred_or_succ
   in
-  Yocaml.Action.write_static_file target
+  Yocaml.Action.Static.write_file_with_metadata target
     (let open Yocaml.Task in
      R.track_common_dependencies
      >>> const target_member
      >>> empty_body ()
      >>> Yocaml_jingoo.Pipeline.as_template
            (module Model.Member)
-           (R.Source.template "redirect.html")
-     >>> drop_first ())
+           (R.Source.template "redirect.html"))
 
 let index (module R : Sigs.RESOLVER) current_member pred succ =
   let target = R.Target.member ~id:(Model.Member.id current_member) in
-  Yocaml.Action.write_static_file target
+  Yocaml.Action.Static.write_file_with_metadata target
     (let open Yocaml.Task in
      R.track_common_dependencies
      >>> Yocaml.Pipeline.track_file R.Source.members
@@ -28,8 +27,7 @@ let index (module R : Sigs.RESOLVER) current_member pred succ =
            (R.Source.template "member.html")
      >>> Yocaml_jingoo.Pipeline.as_template
            (module Model.Member_page)
-           (R.Source.template "layout.html")
-     >>> drop_first ())
+           (R.Source.template "layout.html"))
 
 let run (module R : Sigs.RESOLVER) chain =
   let member = member (module R) in
