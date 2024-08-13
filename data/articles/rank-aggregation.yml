@@ -1,0 +1,7 @@
+title: Sorting things, rank-aggregation (beginner's approach)
+synopsis: Summary of a response about how to order products by their
+  votes/reviews using rank aggregation (using Shopify approach).
+date: 2024-08-10
+authors: [grim]
+link: https://gr-im.github.io/a/rank-aggregation.html
+tags: [ocaml, rank, stats]
