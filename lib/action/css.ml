@@ -1,2 +1,9 @@
 let run (module R : Sigs.RESOLVER) =
-  Batch_copy.run ~extension:[ "css" ] ~source:R.Source.css ~target:R.Target.css
+  Yocaml.Action.Static.write_file R.Target.css
+    (Yocaml.Pipeline.pipe_files ~separator:"\n"
+       Yocaml.Path.
+         [
+           R.Source.css / "fonts.css";
+           R.Source.css / "reset.css";
+           R.Source.css / "style.css";
+         ])
