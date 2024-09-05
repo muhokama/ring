@@ -1,0 +1,18 @@
+id: bhoot
+display_name: Jayesh Bhoot
+bio: I live in Pune, India. Thanks to years of working in Python and JavaScript, I've developed a keen interest in statically typed functional programming.
+location: Pune, India
+main_link:
+  url: https://bhoot.dev
+  lang: en
+additional_links:
+  - title: GitHub
+    url: https://github.com/jbhoot
+  - title: Mastodon
+    url: https://functional.cafe/@bhoot
+  - title: Lobste.rs
+    url: https://lobste.rs/~bhoot
+  - title: LinkedIn
+    url: https://linkedin.com/in/jbhoot    
+  - title: X
+    url: https://x.com/jhbhoot
