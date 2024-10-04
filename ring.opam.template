@@ -1,9 +1,0 @@
-pin-depends: [
-  ["yocaml.dev" "git+https://gitlab.com/funkywork/yocaml.git"]
-  ["yocaml_runtime.dev" "git+https://gitlab.com/funkywork/yocaml.git"]
-  ["yocaml_jingoo.dev" "git+https://gitlab.com/funkywork/yocaml.git"]
-  ["yocaml_yaml.dev" "git+https://gitlab.com/funkywork/yocaml.git"]
-  ["yocaml_omd.dev" "git+https://gitlab.com/funkywork/yocaml.git"]
-  ["yocaml_eio.dev" "git+https://gitlab.com/funkywork/yocaml.git"]
-  ["yocaml_syndication.dev" "git+https://gitlab.com/funkywork/yocaml.git"]
-]

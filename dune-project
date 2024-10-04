@@ -18,16 +18,16 @@
    (ocaml (>= 5.1.1))
    (dune (>= 3.16.0))
 
-   yocaml
-   yocaml_jingoo
-   yocaml_yaml
-   yocaml_omd
-   yocaml_eio
-   yocaml_syndication
+   (yocaml (>= 2.0.0))
+   (yocaml_jingoo (>= 2.0.0))
+   (yocaml_yaml (>= 2.0.0))
+   (yocaml_omd (>= 2.0.0))
+   (yocaml_eio (>= 2.0.0))
+   (yocaml_syndication (>= 2.0.0))
 
    (cmdliner (= 1.3.0))
 
-   (ppx_expect :with-test)
+   ppx_expect
 
    (ocamlformat :with-dev-setup)
    (ocp-indent :with-dev-setup)
