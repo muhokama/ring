@@ -1,0 +1,15 @@
+id: nicolas
+display_name: Nicolas Rinaudo
+bio: I write code for a living and for a hobby. Big fan of programming, Scala, and the sound of my own voice.
+avatar: "nicolas.png"
+location: France, Avon
+main_link:
+  url: https://nrinaudo.com
+  lang: en
+additional_links:
+  - title: X
+    url: https://x.com/NicolasRinaudo
+  - title: Mastodon
+    url: https://functional.cafe/@NicolasRinaudo
+  - title: Github
+    url: https://github.com/nrinaudo
