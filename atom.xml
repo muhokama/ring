@@ -37,6 +37,10 @@
     <name>Condor</name>
     <uri>site.condor-du-plateau.fr/</uri>
   </author>
+  <author>
+    <name>Nicolas Rinaudo</name>
+    <uri>nrinaudo.com</uri>
+  </author>
   <link href="https://ring.muhokama.fun/atom.xml" rel="self"/>
   <link href="https://ring.muhokama.fun"/>
   <entry>
