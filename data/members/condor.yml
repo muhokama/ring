@@ -3,7 +3,7 @@ display_name: Condor
 bio: I love OCaml
 location: France, Lyon
 main_link:
-  url: https://site.condor-du-plateau.fr/
+  url: https://site.condor-du-plateau.fr/meta.html
   lang: fr
 main_feed:
   url: https://site.condor-du-plateau.fr/feed.atom
