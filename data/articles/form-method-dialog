@@ -1,0 +1,6 @@
+title: Use cases for <form method="dialog">
+synopsis: Scenarios where one can use a relatively less known value of the <form> element's method attribute, called dialog.
+date: 2025-01-15
+authors: [bhoot]
+link: https://bhoot.dev/2025/form-method-dialog/
+tags: [html]
