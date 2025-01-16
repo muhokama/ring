@@ -27,7 +27,7 @@
 
    (cmdliner (= 1.3.0))
 
-   ppx_expect
+   (ppx_expect :with-test)
 
    (ocamlformat :with-dev-setup)
    (ocp-indent :with-dev-setup)
