@@ -4,7 +4,7 @@
   <title type="text">ring.muhokama.fun</title>
   <subtitle type="text">federated blog of Muhokama webring</subtitle>
   <generator uri="https://github.com/xhtmlboi/yocaml" version="2">YOCaml</generator>
-  <updated>2024-08-25T00:00:00Z</updated>
+  <updated>2025-01-15T00:00:00Z</updated>
   <author>
     <name>Xavier Van de Woestyne</name>
     <uri>xvw.lol</uri>
@@ -43,6 +43,32 @@
   </author>
   <link href="https://ring.muhokama.fun/atom.xml" rel="self"/>
   <link href="https://ring.muhokama.fun"/>
+  <entry>
+    <id>https://bhoot.dev/2025/form-method-dialog/</id>
+    <title type="text">Use cases for &lt;form method=&quot;dialog&quot;&gt;</title>
+    <updated>2025-01-15T00:00:00Z</updated>
+    <summary type="text">
+      Scenarios where one can use a relatively less known value of the &lt;form&gt; element&apos;s method attribute, called dialog.
+    </summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+      <uri>bhoot.dev</uri>
+    </author>
+    <link href="https://bhoot.dev/2025/form-method-dialog/" rel="alternate" title="Use cases for &lt;form method=&quot;dialog&quot;&gt;"/>
+    <category term="html"/>
+  </entry>
+  <entry>
+    <id>https://xvw.lol/pages/emacs-yasnippet.html</id>
+    <title type="text">Emacs, expanding abbreviations with YASnippet</title>
+    <updated>2024-09-25T00:00:00Z</updated>
+    <summary type="text">A little naive presentation of abbreviation expansion with YASnippet, in Emacs.</summary>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://xvw.lol/pages/emacs-yasnippet.html" rel="alternate" title="Emacs, expanding abbreviations with YASnippet"/>
+    <category term="emacs"/>
+  </entry>
   <entry>
     <id>https://xvw.lol/pages/why-ocaml.html</id>
     <title type="text">Why OCaml?</title>
@@ -125,6 +151,22 @@
     <link href="https://xvw.lol/pages/modules-import.html" rel="alternate" title="OCaml, modules and import schemes"/>
     <category term="ocaml"/>
     <category term="module"/>
+  </entry>
+  <entry>
+    <id>https://xvw.lol/pages/tetra-master.html</id>
+    <title type="text">Tetra-Master hell</title>
+    <updated>2023-09-05T00:00:00Z</updated>
+    <summary type="text">
+      An exhaustive presentation of the Final Fantasy 9 card game, an incomprehensible game with crazy rules.
+    </summary>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://xvw.lol/pages/tetra-master.html" rel="alternate" title="Tetra-Master hell"/>
+    <category term="game"/>
+    <category term="final-fantasy"/>
+    <category term="ocaml"/>
   </entry>
   <entry>
     <id>https://xvw.lol/pages/oop-refl.html</id>
