@@ -1,0 +1,14 @@
+id: clementd
+display_name: Clément Delafargue
+bio: Functional programmer, baker of biscuits
+avatar: "clementd.jpg"
+location: France, Nantes
+main_link:
+  url: https://clementd.wtf
+main_feed:
+  url: https://blog.clement.delafargue.name/atom.xml
+additional_links:
+  - title: Mastodon
+    url: https://framapiaf.org/@clementd
+  - title: Github
+    url: https://github.com/divarvel
