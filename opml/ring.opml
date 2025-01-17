@@ -12,6 +12,6 @@
     <outline description="Main feed of Romain Calascibetta" htmlUrl="https://blog.osau.re/" language="eng" text="blog.osau.re/" title="blog.osau.re/" type="rss" xmlUrl="https://blog.osau.re/feed.xml"/>
     <outline description="Main feed of Grim" htmlUrl="https://gr-im.github.io" language="eng" text="gr-im.github.io" title="gr-im.github.io" type="rss" xmlUrl="https://gr-im.github.io/atom.xml"/>
     <outline description="Main feed of Condor" htmlUrl="https://site.condor-du-plateau.fr/meta.html" language="fra" text="site.condor-du-plateau.fr/meta.html" title="site.condor-du-plateau.fr/meta.html" type="rss" xmlUrl="https://site.condor-du-plateau.fr/feed.atom"/>
-    <outline description="Main feed of Cl\195\169ment Delafargue" htmlUrl="https://clementd.wtf" language="eng" text="clementd.wtf" title="clementd.wtf" type="rss" xmlUrl="https://blog.clement.delafargue.name/atom.xml"/>
+    <outline description="Main feed of Cl\195\169ment Delafargue" htmlUrl="https://blog.clement.delafargue.name" language="eng" text="blog.clement.delafargue.name" title="blog.clement.delafargue.name" type="rss" xmlUrl="https://blog.clement.delafargue.name/atom.xml"/>
   </body>
 </opml>
