@@ -41,6 +41,10 @@
     <name>Nicolas Rinaudo</name>
     <uri>nrinaudo.com</uri>
   </author>
+  <author>
+    <name>Clément Delafargue</name>
+    <uri>clementd.wtf</uri>
+  </author>
   <link href="https://ring.muhokama.fun/atom.xml" rel="self"/>
   <link href="https://ring.muhokama.fun"/>
   <entry>
