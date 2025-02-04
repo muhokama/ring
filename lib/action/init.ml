@@ -7,8 +7,12 @@ let run (module R : Sigs.RESOLVER) =
       ~on:`Source R.Source.chain
   in
   let+ cache, members =
+    let where path =
+      Yocaml.Path.has_extension "yml" path ||
+      Yocaml.Path.has_extension "yaml" path
+    in
     Yocaml.Action.fold ~only:`Files
-      ~where:(Yocaml.Path.has_extension "yml")
+      ~where
       ~state:[] R.Source.members
       (fun path state cache ->
         let+ member =
