@@ -1,0 +1,19 @@
+id: reynir
+display_name: Reynir Björnsson
+bio: Involved in Mirage OS writing OCaml 🐪
+location: Denmark
+main_link:
+  url: https://reyn.ir/
+  lang: en
+main_feed:
+  url: https://reyn.ir/feed.xml
+additional_links:
+  - title: Web site (alternative domain)
+    url: https://reynir.dk/
+  - title: Mastodon
+    url: https://bsd.network/@reynir
+  - title: GitHub
+    url: https://github.com/reynir
+additional_feeds:
+  - title: Blog (alternative domain)
+    url: https://reynir.dk/feed.xml
