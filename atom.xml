@@ -31,7 +31,7 @@
   </author>
   <author>
     <name>Jayesh Bhoot</name>
-    <uri>bhoot.dev</uri>
+    <uri>bhoot.dev/about-website/</uri>
   </author>
   <author>
     <name>Condor</name>
@@ -60,7 +60,7 @@
     </summary>
     <author>
       <name>Jayesh Bhoot</name>
-      <uri>bhoot.dev</uri>
+      <uri>bhoot.dev/about-website/</uri>
     </author>
     <link href="https://bhoot.dev/2025/form-method-dialog/" rel="alternate" title="Use cases for &lt;form method=&quot;dialog&quot;&gt;"/>
     <category term="html"/>
