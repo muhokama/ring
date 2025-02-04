@@ -201,7 +201,7 @@ binary:
 - `dune exec bin/ring.exe` display the manpage of the binary
 - `dune exec bin/ring.exe -- build [COMMON_OPTIONS]` builds the ring in `_www`
   using the current directory as source
-- `dune exec bin/ring.exe -- build [COMMON_OPTIONS] [--port PORT]` launches a
+- `dune exec bin/ring.exe -- watch [COMMON_OPTIONS] [--port PORT]` launches a
   development server that rebuilds the ring each time a page is refreshed
 
 The common options are:
