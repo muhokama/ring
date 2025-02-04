@@ -3,7 +3,7 @@ display_name: Jayesh Bhoot
 bio: I live in Pune, India. Thanks to years of working in Python and JavaScript, I've developed a keen interest in statically typed functional programming.
 location: Pune, India
 main_link:
-  url: https://bhoot.dev
+  url: https://bhoot.dev/about-website/
   lang: en
 additional_links:
   - title: GitHub
