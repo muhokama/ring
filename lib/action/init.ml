@@ -8,12 +8,10 @@ let run (module R : Sigs.RESOLVER) =
   in
   let+ cache, members =
     let where path =
-      Yocaml.Path.has_extension "yml" path ||
-      Yocaml.Path.has_extension "yaml" path
+      Yocaml.Path.has_extension "yml" path
+      || Yocaml.Path.has_extension "yaml" path
     in
-    Yocaml.Action.fold ~only:`Files
-      ~where
-      ~state:[] R.Source.members
+    Yocaml.Action.fold ~only:`Files ~where ~state:[] R.Source.members
       (fun path state cache ->
         let+ member =
           Yocaml_yaml.Eff.read_file_as_metadata
