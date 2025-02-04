@@ -45,6 +45,10 @@
     <name>Clément Delafargue</name>
     <uri>blog.clement.delafargue.name</uri>
   </author>
+  <author>
+    <name>Reynir Björnsson</name>
+    <uri>reyn.ir/</uri>
+  </author>
   <link href="https://ring.muhokama.fun/atom.xml" rel="self"/>
   <link href="https://ring.muhokama.fun"/>
   <entry>
