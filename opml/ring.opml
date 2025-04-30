@@ -15,5 +15,6 @@
     <outline description="Main feed of Cl\195\169ment Delafargue" htmlUrl="https://blog.clement.delafargue.name" language="eng" text="blog.clement.delafargue.name" title="blog.clement.delafargue.name" type="rss" xmlUrl="https://blog.clement.delafargue.name/atom.xml"/>
     <outline description="Main feed of Reynir Bj\195\182rnsson" htmlUrl="https://reyn.ir/" language="eng" text="reyn.ir/" title="reyn.ir/" type="rss" xmlUrl="https://reyn.ir/feed.xml"/>
     <outline description="Additional feed 1 of Reynir Bj\195\182rnsson" language="eng" text="Blog (alternative domain)" title="Blog (alternative domain)" type="rss" xmlUrl="https://reynir.dk/feed.xml"/>
+    <outline description="Main feed of Zachary Kai" htmlUrl="https://zacharykai.net/webrings" language="eng" text="zacharykai.net/webrings" title="zacharykai.net/webrings" type="rss" xmlUrl="https://zacharykai.net/assets/rss.xml"/>
   </body>
 </opml>
