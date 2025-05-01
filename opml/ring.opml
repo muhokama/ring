@@ -16,5 +16,6 @@
     <outline description="Main feed of Reynir Bj\195\182rnsson" htmlUrl="https://reyn.ir/" language="eng" text="reyn.ir/" title="reyn.ir/" type="rss" xmlUrl="https://reyn.ir/feed.xml"/>
     <outline description="Additional feed 1 of Reynir Bj\195\182rnsson" language="eng" text="Blog (alternative domain)" title="Blog (alternative domain)" type="rss" xmlUrl="https://reynir.dk/feed.xml"/>
     <outline description="Main feed of Zachary Kai" htmlUrl="https://zacharykai.net/webrings" language="eng" text="zacharykai.net/webrings" title="zacharykai.net/webrings" type="rss" xmlUrl="https://zacharykai.net/assets/rss.xml"/>
+    <outline description="Main feed of Daryl Sun" htmlUrl="https://blog.darylsun.page/" language="eng" text="blog.darylsun.page/" title="blog.darylsun.page/" type="rss" xmlUrl="https://blog.darylsun.page/rss.xml"/>
   </body>
 </opml>
