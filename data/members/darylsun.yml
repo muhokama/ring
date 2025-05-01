@@ -1,0 +1,13 @@
+id: darylsun
+display_name: Daryl Sun
+bio: I play with software and videogames. Sometimes I write things.
+location: Metro Manila, Philippines
+main_link:
+  url: https://blog.darylsun.page/
+  lang: eng
+main_feed:
+  url: https://blog.darylsun.page/rss.xml
+  lang: eng
+additional_links:
+  - title: Mastodon
+    url: https://social.lol/@darylsun
