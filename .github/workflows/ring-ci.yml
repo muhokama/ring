@@ -13,7 +13,7 @@ jobs:
       - name: Set-up OCaml
         uses: ocaml/setup-ocaml@v3
         with:
-          ocaml-compiler: "5.1.1"
+          ocaml-compiler: "5.3.0"
       - run: opam install . --deps-only --with-test
       - run: opam exec -- dune build
       - run: opam exec -- dune runtest
@@ -34,7 +34,7 @@ jobs:
       - name: Set-up OCaml
         uses: ocaml/setup-ocaml@v3
         with:
-          ocaml-compiler: "5.1.1"
+          ocaml-compiler: "5.3.0"
 
       - uses: ocaml/setup-ocaml/lint-doc@v3
 
@@ -47,6 +47,6 @@ jobs:
       - name: Set-up OCaml
         uses: ocaml/setup-ocaml@v3
         with:
-          ocaml-compiler: "5.1.1"
+          ocaml-compiler: "5.3.0"
 
       - uses: ocaml/setup-ocaml/lint-fmt@v3
