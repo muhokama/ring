@@ -1,0 +1,20 @@
+id: aguluman
+display_name: Chukwuma Akunyili
+bio: Hi! I am very much interested in functional programming languages and earning an astonishing wage creating products humanity needs.
+avatar: "aguluman.png"
+location: Lagos, Nigeria
+main_link:
+  url: https://fearful-odds.rocks
+  lang: eng
+main_feed:
+  url: https://fearful-odds.rocks/feed.xml
+  lang: eng
+additional_links:
+  - title: X
+    url: https://x.com/agulumans
+  - title: Youtube
+    url: https://www.youtube.com/@aguluman
+  - title: Github
+    url: https://github.com/aguluman
+  - title: Itch
+    url: https://chukwuma-a.itch.io/
