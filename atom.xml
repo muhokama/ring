@@ -4,7 +4,7 @@
   <title type="text">ring.muhokama.fun</title>
   <subtitle type="text">federated blog of Muhokama webring</subtitle>
   <generator uri="https://github.com/xhtmlboi/yocaml" version="2">YOCaml</generator>
-  <updated>2025-01-15T00:00:00Z</updated>
+  <updated>2025-08-13T00:00:00Z</updated>
   <author>
     <name>Xavier Van de Woestyne</name>
     <uri>xvw.lol</uri>
@@ -61,8 +61,76 @@
     <name>Daryl Sun</name>
     <uri>blog.darylsun.page/</uri>
   </author>
+  <author>
+    <name>Chukwuma Akunyili</name>
+    <uri>fearful-odds.rocks</uri>
+  </author>
   <link href="https://ring.muhokama.fun/atom.xml" rel="self"/>
   <link href="https://ring.muhokama.fun"/>
+  <entry>
+    <id>https://xvw.lol/en/articles/why-ocaml.html</id>
+    <title type="text">Why I chose OCaml as my primary language</title>
+    <updated>2025-08-13T00:00:00Z</updated>
+    <summary type="text">
+      This article is an attempt to present the reasons why I chose OCaml and why I am satisfied with it, for both personal and professional projects (in English).
+    </summary>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://xvw.lol/en/articles/why-ocaml.html" rel="alternate" title="Why I chose OCaml as my primary language"/>
+    <category term="ocaml"/>
+    <category term="opinion"/>
+    <category term="insight"/>
+  </entry>
+  <entry>
+    <id>https://xvw.lol/en/articles/tetra-master.html</id>
+    <title type="text">Tetra-Master hell</title>
+    <updated>2025-07-02T00:00:00Z</updated>
+    <summary type="text">
+      An exhaustive presentation of the Final Fantasy 9 card game, an incomprehensible game with crazy rules.
+    </summary>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://xvw.lol/en/articles/tetra-master.html" rel="alternate" title="Tetra-Master hell"/>
+    <category term="game"/>
+    <category term="final-fantasy"/>
+    <category term="ocaml"/>
+  </entry>
+  <entry>
+    <id>https://xvw.lol/en/articles/modules-import.html</id>
+    <title type="text">OCaml, modules and import schemes</title>
+    <updated>2025-06-30T00:00:00Z</updated>
+    <summary type="text">
+      In this article, we&apos;re going to look at how generalised openings can be used to reproduce a common practice in other languages, which I call, somewhat pompously, import strategies,
+    </summary>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://xvw.lol/en/articles/modules-import.html" rel="alternate" title="OCaml, modules and import schemes"/>
+    <category term="ocaml"/>
+    <category term="module"/>
+  </entry>
+  <entry>
+    <id>https://xvw.lol/en/articles/oop-refl.html</id>
+    <title type="text">Guarded methods using equality witnesses</title>
+    <updated>2025-06-29T00:00:00Z</updated>
+    <summary type="text">
+      Guarded methods allow constraints to be attached to the receiver (self) only for certain methods, so that these methods can only be called if the receiver satisfies these constraints (these guards). OCaml does not syntactically allow this type of method to be defined directly. In this note, we&apos;ll look at how to encode them using a type equality witness.
+    </summary>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://xvw.lol/en/articles/oop-refl.html" rel="alternate" title="Guarded methods using equality witnesses"/>
+    <category term="ocaml"/>
+    <category term="oop"/>
+    <category term="refl"/>
+    <category term="gadt"/>
+  </entry>
   <entry>
     <id>https://bhoot.dev/2025/form-method-dialog/</id>
     <title type="text">Use cases for &lt;form method=&quot;dialog&quot;&gt;</title>
