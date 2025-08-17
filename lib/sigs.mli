@@ -2,7 +2,8 @@
 
 (** {1 Resolver}
 
-    Description of the requirements needed to describe a {!module:Gem.Resolver}. *)
+    Description of the requirements needed to describe a {!module:Gem.Resolver}.
+*)
 
 module type RESOLVABLE = sig
   (** A resolvable module is used to describe a resolver for calculating source,

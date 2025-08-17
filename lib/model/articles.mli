@@ -1,4 +1,5 @@
-(** Describes a federation page of external articles published by ring members. *)
+(** Describes a federation page of external articles published by ring members.
+*)
 
 type t
 (** The type describing the federation. *)
