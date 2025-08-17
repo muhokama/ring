@@ -11,6 +11,8 @@ main_feed:
   url: https://xvw.lol/atom.xml
   lang: fra
 additional_links:
+  - title: English site
+    url: https://xvw.lol/en/
   - title: X
     url: https://x.com/vdwxv
   - title: Mastodon
