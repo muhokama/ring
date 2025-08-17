@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--main-dark-color);
+    min-height: 100dvh;
 }
 
 a {
@@ -323,5 +324,31 @@ footer nav {
 
     header > .container {
         flex-direction: column;
+    }
+}
+
+div.frame {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    & aside {
+        font-family: "Inter";
+        padding: 1.5rem;
+
+        & nav {
+            margin-top: 0.2rem;
+
+            & a {
+                display: inline-block;
+                margin-right: 1rem;
+                font-weight: 700;
+            }
+        }
+    }
+
+    & > iframe {
+        flex: 1;
+        background-color: #fff;
     }
 }

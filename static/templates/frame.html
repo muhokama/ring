@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>ring.muhokama.fun - {{ current.main_link.title}}</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <aside class="toolbox">
+        Browsing <a href="/">ring.muhokama.fun</a>
+        <nav>
+          <a href="/u/{{ predecessor.id }}/frame.html">← {{ predecessor.main_link.title}}</a>
+          <a href="/u/{{ current.id }}/frame.html">{{ current.main_link.title}}</a>
+          <a href="/u/{{ successor.id }}/frame.html">{{ successor.main_link.title}} →</a>
+        </nav>
+      </aside>
+      <iframe frameborder="0" src="{{ current.main_link.url.url }}"></iframe>
+    </div>
+  </body>
+</html>
