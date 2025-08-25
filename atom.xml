@@ -4,7 +4,7 @@
   <title type="text">ring.muhokama.fun</title>
   <subtitle type="text">federated blog of Muhokama webring</subtitle>
   <generator uri="https://github.com/xhtmlboi/yocaml" version="2">YOCaml</generator>
-  <updated>2025-08-13T00:00:00Z</updated>
+  <updated>2025-08-18T00:00:00Z</updated>
   <author>
     <name>Xavier Van de Woestyne</name>
     <uri>xvw.lol</uri>
@@ -67,6 +67,22 @@
   </author>
   <link href="https://ring.muhokama.fun/atom.xml" rel="self"/>
   <link href="https://ring.muhokama.fun"/>
+  <entry>
+    <id>https://gr-im.github.io/a/dependency-injection.html</id>
+    <title type="text">Basic dependency injection with objects</title>
+    <updated>2025-08-18T00:00:00Z</updated>
+    <summary type="text">
+      A simple way to encode dependency injection using the Reader monad and objects in OCaml (to work well with type inference).
+    </summary>
+    <author>
+      <name>Grim</name>
+      <uri>gr-im.github.io</uri>
+    </author>
+    <link href="https://gr-im.github.io/a/dependency-injection.html" rel="alternate" title="Basic dependency injection with objects"/>
+    <category term="ocaml"/>
+    <category term="solid"/>
+    <category term="oop"/>
+  </entry>
   <entry>
     <id>https://xvw.lol/en/articles/why-ocaml.html</id>
     <title type="text">Why I chose OCaml as my primary language</title>
