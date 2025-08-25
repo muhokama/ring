@@ -1,0 +1,8 @@
+title: Basic dependency injection with objects
+synopsis: A simple way to encode dependency injection using the Reader monad 
+  and objects in OCaml (to work well with type inference).
+date: 2025-08-18
+authors: [grim]
+link:
+  url: https://gr-im.github.io/a/dependency-injection.html
+tags: [ocaml, solid, oop]
