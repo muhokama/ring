@@ -23,7 +23,7 @@ let fetch ?limit chain path =
       in
       limit
       |> Option.fold ~none:articles ~some:(fun limit ->
-             articles |> Stdlib.List.filteri (fun i _ -> i > limit))
+          articles |> Stdlib.List.filteri (fun i _ -> i > limit))
       |> Stdlib.List.sort (fun a b -> Article.sort b a)
       |> Stdlib.List.filter (Article.authors_in_chain chain))
 

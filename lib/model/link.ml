@@ -6,13 +6,13 @@ let validate =
   let open Yocaml.Data.Validation in
   (Url.validate $ fun url -> (Url.url url, Lang.Eng, url))
   / record (fun fields ->
-        let* url = required fields "url" Url.validate in
-        let+ lang = optional_or fields "lang" ~default:Lang.Eng Lang.validate
-        and+ title =
-          optional_or fields ~default:(Url.url url) "title"
-            (string & minimal_length 1)
-        in
-        (title, lang, url))
+      let* url = required fields "url" Url.validate in
+      let+ lang = optional_or fields "lang" ~default:Lang.Eng Lang.validate
+      and+ title =
+        optional_or fields ~default:(Url.url url) "title"
+          (string & minimal_length 1)
+      in
+      (title, lang, url))
 
 let normalize_underlying_link (title, lang, url) =
   let open Yocaml.Data in
@@ -29,10 +29,10 @@ let normalize_to_semantic_list links =
   let len = List.length links in
   links
   |> List.mapi (fun i link ->
-         let sep =
-           if i >= len - 1 then "" else if i >= len - 2 then " and " else ", "
-         in
-         record (normalize_underlying_link link @ [ ("sep", string sep) ]))
+      let sep =
+        if i >= len - 1 then "" else if i >= len - 2 then " and " else ", "
+      in
+      record (normalize_underlying_link link @ [ ("sep", string sep) ]))
   |> list
 
 let pp ppf (title, lang, url) =

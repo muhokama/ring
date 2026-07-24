@@ -136,14 +136,14 @@ let to_outline member =
   let additional_feeds =
     member.additional_feeds
     |> List.mapi (fun index feed ->
-           let title = feed |> Link.title in
-           let description =
-             "Additional feed "
-             ^ string_of_int (succ index)
-             ^ " of "
-             ^ display_name
-           in
-           feed_to_outline title description feed)
+        let title = feed |> Link.title in
+        let description =
+          "Additional feed "
+          ^ string_of_int (succ index)
+          ^ " of "
+          ^ display_name
+        in
+        feed_to_outline title description feed)
   in
   main_feed @ additional_feeds
 

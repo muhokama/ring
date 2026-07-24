@@ -88,6 +88,6 @@ let to_authors chain =
 let as_author chain id =
   chain
   |> List.find_map (fun { curr; _ } ->
-         if String.equal (Member.id curr) id then Some curr else None)
+      if String.equal (Member.id curr) id then Some curr else None)
   |> Option.fold ~none:unknow_author (* Should never happen *)
        ~some:Member.as_author
