@@ -23,6 +23,8 @@ and pp_record_error ppf = function
   | Invalid_field { given; field; error } ->
       Format.fprintf ppf "field: %s, %a for %a" field pp_value_error error
         Yocaml.Data.pp given
+  | Invalid_subrecord err ->
+      Format.fprintf ppf "subrecord: %a" pp_value_error err
 
 let print_validated_value pp_ok x =
   print_endline
