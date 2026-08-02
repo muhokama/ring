@@ -4,7 +4,7 @@
   <title type="text">ring.muhokama.fun</title>
   <subtitle type="text">federated blog of Muhokama webring</subtitle>
   <generator uri="https://github.com/xhtmlboi/yocaml" version="2">YOCaml</generator>
-  <updated>2025-08-18T00:00:00Z</updated>
+  <updated>2026-06-15T00:00:00Z</updated>
   <author>
     <name>Xavier Van de Woestyne</name>
     <uri>xvw.lol</uri>
@@ -67,6 +67,18 @@
   </author>
   <link href="https://ring.muhokama.fun/atom.xml" rel="self"/>
   <link href="https://ring.muhokama.fun"/>
+  <entry>
+    <id>https://xvw.lol/en/articles/emacs-start.html</id>
+    <title type="text">Emacs, how it all started (for me)</title>
+    <updated>2026-06-15T00:00:00Z</updated>
+    <summary type="text">A presentation of why, and how, I started using Emacs</summary>
+    <author>
+      <name>Xavier Van de Woestyne</name>
+      <uri>xvw.lol</uri>
+    </author>
+    <link href="https://xvw.lol/en/articles/emacs-start.html" rel="alternate" title="Emacs, how it all started (for me)"/>
+    <category term="emacs"/>
+  </entry>
   <entry>
     <id>https://gr-im.github.io/a/dependency-injection.html</id>
     <title type="text">Basic dependency injection with objects</title>
