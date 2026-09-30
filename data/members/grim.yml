@@ -5,9 +5,9 @@ bio: I work as a software engineer at The Funkyworkers, where my
 location: Italy, Florence
 avatar: "grim.png"
 main_link:
-  url: https://gr-im.github.io
+  url: https://grim.cargocut.org
 main_feed:
-  url: https://gr-im.github.io/atom.xml
+  url: https://grim.cargocut.org/atom.xml
 additional_links:
   - title: X
     url: https://x.com/grimfw
