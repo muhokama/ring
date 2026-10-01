@@ -1,0 +1,11 @@
+id: exfalsoquodlibet
+display_name: Nicolas Osborne
+location: France
+main_link:
+  url: https://blog.exfalsoquodlibet.xyz
+  lang: en
+additional_links:
+  - title: forge
+    url: https://git.sr.ht/~exfalsoquodlibet/
+  - title: mastodon
+    url: https://piaille.fr/@exfalsoquodlibet
