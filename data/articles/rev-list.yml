@@ -1,0 +1,11 @@
+title: Lists that keep track of their reversal
+synopsis:
+  Summary of a small discussion on how to track, at type level, whether
+  a list is constructed forwards or backwards. It remains to be seen
+  whether this will be useful in everyday life, but the proposal is
+  driven by a specific issue.
+date: 2026-09-30
+authors: [grim]
+link:
+  url: https://grim.cargocut.org/a/rev-list.html
+tags: [ocaml, typing ]
