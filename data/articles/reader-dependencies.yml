@@ -4,5 +4,5 @@ synopsis: A simple way to encode dependency injection using the Reader monad
 date: 2025-08-18
 authors: [grim]
 link:
-  url: https://gr-im.github.io/a/dependency-injection.html
+  url: https://grim.cargocut.org/a/dependency-injection.html
 tags: [ocaml, solid, oop]
