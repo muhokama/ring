@@ -4,7 +4,7 @@
   <title type="text">ring.muhokama.fun</title>
   <subtitle type="text">federated blog of Muhokama webring</subtitle>
   <generator uri="https://github.com/xhtmlboi/yocaml" version="2">YOCaml</generator>
-  <updated>2026-06-15T00:00:00Z</updated>
+  <updated>2026-09-30T00:00:00Z</updated>
   <author>
     <name>Xavier Van de Woestyne</name>
     <uri>xvw.lol</uri>
@@ -72,6 +72,21 @@
   <link href="https://ring.muhokama.fun/atom.xml" rel="self"/>
   <link href="https://ring.muhokama.fun"/>
   <entry>
+    <id>https://grim.cargocut.org/a/rev-list.html</id>
+    <title type="text">Lists that keep track of their reversal</title>
+    <updated>2026-09-30T00:00:00Z</updated>
+    <summary type="text">
+      Summary of a small discussion on how to track, at type level, whether a list is constructed forwards or backwards. It remains to be seen whether this will be useful in everyday life, but the proposal is driven by a specific issue.
+    </summary>
+    <author>
+      <name>Grim</name>
+      <uri>grim.cargocut.org</uri>
+    </author>
+    <link href="https://grim.cargocut.org/a/rev-list.html" rel="alternate" title="Lists that keep track of their reversal"/>
+    <category term="ocaml"/>
+    <category term="typing"/>
+  </entry>
+  <entry>
     <id>https://xvw.lol/en/articles/emacs-start.html</id>
     <title type="text">Emacs, how it all started (for me)</title>
     <updated>2026-06-15T00:00:00Z</updated>
@@ -84,7 +99,7 @@
     <category term="emacs"/>
   </entry>
   <entry>
-    <id>https://gr-im.github.io/a/dependency-injection.html</id>
+    <id>https://grim.cargocut.org/a/dependency-injection.html</id>
     <title type="text">Basic dependency injection with objects</title>
     <updated>2025-08-18T00:00:00Z</updated>
     <summary type="text">
@@ -94,7 +109,7 @@
       <name>Grim</name>
       <uri>grim.cargocut.org</uri>
     </author>
-    <link href="https://gr-im.github.io/a/dependency-injection.html" rel="alternate" title="Basic dependency injection with objects"/>
+    <link href="https://grim.cargocut.org/a/dependency-injection.html" rel="alternate" title="Basic dependency injection with objects"/>
     <category term="ocaml"/>
     <category term="solid"/>
     <category term="oop"/>
@@ -206,7 +221,7 @@
     <category term="insight"/>
   </entry>
   <entry>
-    <id>https://gr-im.github.io/a/rank-aggregation.html</id>
+    <id>https://grim.cargocut.org/a/rank-aggregation.html</id>
     <title type="text">Sorting things, rank-aggregation (beginner&apos;s approach)</title>
     <updated>2024-08-10T00:00:00Z</updated>
     <summary type="text">
@@ -216,7 +231,7 @@
       <name>Grim</name>
       <uri>grim.cargocut.org</uri>
     </author>
-    <link href="https://gr-im.github.io/a/rank-aggregation.html" rel="alternate" title="Sorting things, rank-aggregation (beginner&apos;s approach)"/>
+    <link href="https://grim.cargocut.org/a/rank-aggregation.html" rel="alternate" title="Sorting things, rank-aggregation (beginner&apos;s approach)"/>
     <category term="ocaml"/>
     <category term="rank"/>
     <category term="stats"/>
@@ -242,7 +257,7 @@
     <category term="merlin"/>
   </entry>
   <entry>
-    <id>https://gr-im.github.io/a/fold-gof.html</id>
+    <id>https://grim.cargocut.org/a/fold-gof.html</id>
     <title type="text">Fold for cheap pattern-matching</title>
     <updated>2024-03-18T00:00:00Z</updated>
     <summary type="text">
@@ -252,7 +267,7 @@
       <name>Grim</name>
       <uri>grim.cargocut.org</uri>
     </author>
-    <link href="https://gr-im.github.io/a/fold-gof.html" rel="alternate" title="Fold for cheap pattern-matching"/>
+    <link href="https://grim.cargocut.org/a/fold-gof.html" rel="alternate" title="Fold for cheap pattern-matching"/>
     <category term="ocaml"/>
     <category term="pattern"/>
     <category term="fp"/>
